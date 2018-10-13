@@ -23,6 +23,7 @@
 		FABB4D832163FBF700FEBE2A /* APIParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABB4D822163FBF700FEBE2A /* APIParameters.swift */; };
 		FABB4D852164ABFF00FEBE2A /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABB4D842164ABFF00FEBE2A /* APIManager.swift */; };
 		FABB4D872164B2FA00FEBE2A /* APIRowSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABB4D862164B2FA00FEBE2A /* APIRowSet.swift */; };
+		FADFBCFA216FA04100A92EB5 /* PlayersNavBarTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADFBCF9216FA04100A92EB5 /* PlayersNavBarTitleView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		FABB4D822163FBF700FEBE2A /* APIParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIParameters.swift; sourceTree = "<group>"; };
 		FABB4D842164ABFF00FEBE2A /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		FABB4D862164B2FA00FEBE2A /* APIRowSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRowSet.swift; sourceTree = "<group>"; };
+		FADFBCF9216FA04100A92EB5 /* PlayersNavBarTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersNavBarTitleView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 			children = (
 				FA80FC382163B5DF00452C5A /* AppDelegate.swift */,
 				FABB4D842164ABFF00FEBE2A /* APIManager.swift */,
+				FADFBCF9216FA04100A92EB5 /* PlayersNavBarTitleView.swift */,
 				FABB4D7F2163FB0600FEBE2A /* Model */,
 				FABB4D762163E95A00FEBE2A /* Cells */,
 				FA80FC4C2163BA8C00452C5A /* TeamsController.swift */,
@@ -196,6 +199,7 @@
 				FABB4D7C2163EB2800FEBE2A /* Player.swift in Sources */,
 				FA80FC392163B5DF00452C5A /* AppDelegate.swift in Sources */,
 				FABB4D7A2163E9C100FEBE2A /* PlayersController.swift in Sources */,
+				FADFBCFA216FA04100A92EB5 /* PlayersNavBarTitleView.swift in Sources */,
 				FABB4D7E2163FABD00FEBE2A /* APIResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

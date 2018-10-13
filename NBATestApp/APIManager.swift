@@ -29,9 +29,9 @@ class APIManager {
 }
 
     
-    func getPlayersOfTeam(id teamID: Int, completion: @escaping ([Player]) -> ()) {
+    func getPlayersOfTeam(id teamID: Int, season: String, completion: @escaping ([Player]) -> ()) {
         
-        let url = "https://stats.nba.com/stats/commonteamroster/?Season=2018-19&TeamID=\(teamID)"
+        let url = "https://stats.nba.com/stats/commonteamroster/?Season=\(season)&TeamID=\(teamID)"
         
         fetchData(fromURL: url) { (data) in
             

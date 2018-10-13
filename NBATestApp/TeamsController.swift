@@ -17,11 +17,11 @@ class TeamsController: UICollectionViewController {
         collectionView.alwaysBounceVertical = true
     }
 
+    
     // MARK: UICollectionViewDataSource
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 6
     }
-
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return arrTeams[section].count
@@ -45,7 +45,6 @@ class TeamsController: UICollectionViewController {
         
         return header
     }
-    
     
     
      // MARK: - Navigation

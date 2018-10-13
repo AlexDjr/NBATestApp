@@ -19,5 +19,69 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NBATestApp/APIManager.swift"
+            timestampString = "561129958.118093"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "getPlayersOfTeam(id:season:completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "NBATestApp.APIManager.getPlayersOfTeam(id: Swift.Int, season: Swift.String, completion: (Swift.Array&lt;NBATestApp.Player&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "NBATestApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alex/GIT/NBATestApp/NBATestApp/APIManager.swift"
+                  timestampString = "561125576.866381"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "36"
+                  endingLineNumber = "36"
+                  offsetFromSymbolStart = "576">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.Data&gt;) -&gt; () in NBATestApp.APIManager.getPlayersOfTeam(id: Swift.Int, season: Swift.String, completion: (Swift.Array&lt;NBATestApp.Player&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "NBATestApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alex/GIT/NBATestApp/NBATestApp/APIManager.swift"
+                  timestampString = "561125576.868693"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "40"
+                  endingLineNumber = "40"
+                  offsetFromSymbolStart = "107">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NBATestApp/PlayersController.swift"
+            timestampString = "561146245.443361"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "120"
+            endingLineNumber = "120"
+            landmarkName = "getPlayersPhoto()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

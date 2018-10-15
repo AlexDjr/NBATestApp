@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PlayersController: UITableViewController, UIPickerViewDataSource, UIPickerViewDelegate {
+class PlayersController: UITableViewController, PickerAlertDelegate {
 
     var team : Team?
     var players : [Player]?
@@ -77,20 +77,17 @@ class PlayersController: UITableViewController, UIPickerViewDataSource, UIPicker
         return 90
     }
     
-    
-    //    MARK: - UIPickerViewDataSource
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-            return team?.seasons.count ?? 0
-    }
-    
-    
-    //    MARK: - UIPickerViewDelegate
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return team?.seasons[row]
+//    MARK: - PickerAlertDelegate
+    func handlePickerValue(_ value: String) {
+        if season != value {
+            season = value
+            if loadingView.isHidden == false {
+                removeLoadingScreen()
+            }
+            setLoadingScreen()
+            getPlayers()
+            navBarTitleView?.seasonButton.setTitle(self.season + " ⩔", for: .normal)
+        }
     }
 
     
@@ -141,6 +138,10 @@ class PlayersController: UITableViewController, UIPickerViewDataSource, UIPicker
         
         newLoadingView.addSubview(spinner)
         tableView.addSubview(newLoadingView)
+        
+        tableView.isScrollEnabled = false
+        tableView.scrollToRow(at: IndexPath.init(row: 0, section: 0), at: .top, animated: false)
+        
         loadingView = newLoadingView
         
     }
@@ -150,41 +151,17 @@ class PlayersController: UITableViewController, UIPickerViewDataSource, UIPicker
         spinner.stopAnimating()
         spinner.isHidden = true
         loadingView.isHidden = true
-        self.tableView.separatorStyle = .singleLine
+        tableView.separatorStyle = .singleLine
+        tableView.isScrollEnabled = true
         
     }
     
     @objc private func chooseSeason() {
         
-        let alertView = UIAlertController(
-            title: "Choose NBA season",
-            message: "\n\n\n\n\n\n\n\n\n\n\n",
-            preferredStyle: .actionSheet)
+        let pickerAlert = PickerAlertController(withTeam: team!, season: season)
+        pickerAlert.delegate = self
         
-        
-        let pickerView = UIPickerView(frame:CGRect.zero)
-        pickerView.dataSource = self
-        pickerView.delegate = self
-        
-        alertView.view.addSubview(pickerView)
-        
-        pickerView.translatesAutoresizingMaskIntoConstraints = false
-        pickerView.centerXAnchor.constraint(equalTo: alertView.view.centerXAnchor).isActive = true
-        pickerView.centerYAnchor.constraint(equalTo: alertView.view.centerYAnchor, constant: -15).isActive = true
-        
-        pickerView.selectRow(team!.seasons.index(of: self.season)!, inComponent: 0, animated: false)
-        
-        let okAction = UIAlertAction(title: "OK", style: .default) { _ in
-            if self.season != self.team!.seasons[pickerView.selectedRow(inComponent: 0)] {
-                self.season = self.team!.seasons[pickerView.selectedRow(inComponent: 0)]
-                self.setLoadingScreen()
-                self.getPlayers()
-                self.navBarTitleView?.seasonButton.setTitle(self.season + " ⩔", for: .normal)
-            }
-        }
-        alertView.addAction(okAction)
-        
-        present(alertView, animated: true, completion: nil)
+        present(pickerAlert, animated: true, completion: nil)
         
     }
     

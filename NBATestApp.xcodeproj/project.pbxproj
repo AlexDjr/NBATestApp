@@ -14,6 +14,7 @@
 		FA80FC4D2163BA8C00452C5A /* TeamsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA80FC4C2163BA8C00452C5A /* TeamsController.swift */; };
 		FA80FC4F2163BC6B00452C5A /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA80FC4E2163BC6B00452C5A /* Team.swift */; };
 		FA80FC512163C3A300452C5A /* TeamCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA80FC502163C3A300452C5A /* TeamCell.swift */; };
+		FA9D3A0C2175028600CFF3CD /* PickerAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9D3A0B2175028600CFF3CD /* PickerAlertController.swift */; };
 		FABB4D752163E24000FEBE2A /* DivisionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABB4D742163E24000FEBE2A /* DivisionCell.swift */; };
 		FABB4D782163E98C00FEBE2A /* PlayerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABB4D772163E98C00FEBE2A /* PlayerCell.swift */; };
 		FABB4D7A2163E9C100FEBE2A /* PlayersController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABB4D792163E9C100FEBE2A /* PlayersController.swift */; };
@@ -36,6 +37,7 @@
 		FA80FC4C2163BA8C00452C5A /* TeamsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsController.swift; sourceTree = "<group>"; };
 		FA80FC4E2163BC6B00452C5A /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
 		FA80FC502163C3A300452C5A /* TeamCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamCell.swift; sourceTree = "<group>"; };
+		FA9D3A0B2175028600CFF3CD /* PickerAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerAlertController.swift; sourceTree = "<group>"; };
 		FABB4D742163E24000FEBE2A /* DivisionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DivisionCell.swift; sourceTree = "<group>"; };
 		FABB4D772163E98C00FEBE2A /* PlayerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerCell.swift; sourceTree = "<group>"; };
 		FABB4D792163E9C100FEBE2A /* PlayersController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersController.swift; sourceTree = "<group>"; };
@@ -81,6 +83,7 @@
 				FA80FC382163B5DF00452C5A /* AppDelegate.swift */,
 				FABB4D842164ABFF00FEBE2A /* APIManager.swift */,
 				FADFBCF9216FA04100A92EB5 /* PlayersNavBarTitleView.swift */,
+				FA9D3A0B2175028600CFF3CD /* PickerAlertController.swift */,
 				FABB4D7F2163FB0600FEBE2A /* Model */,
 				FABB4D762163E95A00FEBE2A /* Cells */,
 				FA80FC4C2163BA8C00452C5A /* TeamsController.swift */,
@@ -200,6 +203,7 @@
 				FA80FC392163B5DF00452C5A /* AppDelegate.swift in Sources */,
 				FABB4D7A2163E9C100FEBE2A /* PlayersController.swift in Sources */,
 				FADFBCFA216FA04100A92EB5 /* PlayersNavBarTitleView.swift in Sources */,
+				FA9D3A0C2175028600CFF3CD /* PickerAlertController.swift in Sources */,
 				FABB4D7E2163FABD00FEBE2A /* APIResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

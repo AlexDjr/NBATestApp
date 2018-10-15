@@ -41,7 +41,7 @@ struct Team {
             var yearsArray = [String]()
             var year = foundationYear
             while year != "2019" {
-                yearsArray.append(year + "-" + String(Int(year.suffix(2))! + 1))
+                yearsArray.append(year + "-" + String(Int(year)! + 1).suffix(2))
                 year = String(Int(year)! + 1)
             }
             return yearsArray 

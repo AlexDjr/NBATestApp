@@ -15,6 +15,14 @@
 		FA80FC4F2163BC6B00452C5A /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA80FC4E2163BC6B00452C5A /* Team.swift */; };
 		FA80FC512163C3A300452C5A /* TeamCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA80FC502163C3A300452C5A /* TeamCell.swift */; };
 		FA9D3A0C2175028600CFF3CD /* PickerAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9D3A0B2175028600CFF3CD /* PickerAlertController.swift */; };
+		FA9D3A0E2176023700CFF3CD /* SCDAPIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9D3A0D2176023700CFF3CD /* SCDAPIResponse.swift */; };
+		FA9D3A102176030F00CFF3CD /* SCDAPIMonthSCD.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9D3A0F2176030F00CFF3CD /* SCDAPIMonthSCD.swift */; };
+		FA9D3A12217603A000CFF3CD /* SCDAPIMonth.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9D3A11217603A000CFF3CD /* SCDAPIMonth.swift */; };
+		FA9D3A142176044F00CFF3CD /* SCDAPIGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9D3A132176044F00CFF3CD /* SCDAPIGame.swift */; };
+		FA9D3A16217604F000CFF3CD /* SCDAPITeam.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9D3A15217604F000CFF3CD /* SCDAPITeam.swift */; };
+		FA9D3A1C21761A0000CFF3CD /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9D3A1B21761A0000CFF3CD /* Schedule.swift */; };
+		FA9D3A1E21761B4E00CFF3CD /* ScheduleMonth.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9D3A1D21761B4E00CFF3CD /* ScheduleMonth.swift */; };
+		FA9D3A2021761BC600CFF3CD /* ScheduleGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9D3A1F21761BC600CFF3CD /* ScheduleGame.swift */; };
 		FABB4D752163E24000FEBE2A /* DivisionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABB4D742163E24000FEBE2A /* DivisionCell.swift */; };
 		FABB4D782163E98C00FEBE2A /* PlayerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABB4D772163E98C00FEBE2A /* PlayerCell.swift */; };
 		FABB4D7A2163E9C100FEBE2A /* PlayersController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABB4D792163E9C100FEBE2A /* PlayersController.swift */; };
@@ -38,6 +46,14 @@
 		FA80FC4E2163BC6B00452C5A /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
 		FA80FC502163C3A300452C5A /* TeamCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamCell.swift; sourceTree = "<group>"; };
 		FA9D3A0B2175028600CFF3CD /* PickerAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerAlertController.swift; sourceTree = "<group>"; };
+		FA9D3A0D2176023700CFF3CD /* SCDAPIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCDAPIResponse.swift; sourceTree = "<group>"; };
+		FA9D3A0F2176030F00CFF3CD /* SCDAPIMonthSCD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCDAPIMonthSCD.swift; sourceTree = "<group>"; };
+		FA9D3A11217603A000CFF3CD /* SCDAPIMonth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCDAPIMonth.swift; sourceTree = "<group>"; };
+		FA9D3A132176044F00CFF3CD /* SCDAPIGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCDAPIGame.swift; sourceTree = "<group>"; };
+		FA9D3A15217604F000CFF3CD /* SCDAPITeam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCDAPITeam.swift; sourceTree = "<group>"; };
+		FA9D3A1B21761A0000CFF3CD /* Schedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
+		FA9D3A1D21761B4E00CFF3CD /* ScheduleMonth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleMonth.swift; sourceTree = "<group>"; };
+		FA9D3A1F21761BC600CFF3CD /* ScheduleGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleGame.swift; sourceTree = "<group>"; };
 		FABB4D742163E24000FEBE2A /* DivisionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DivisionCell.swift; sourceTree = "<group>"; };
 		FABB4D772163E98C00FEBE2A /* PlayerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerCell.swift; sourceTree = "<group>"; };
 		FABB4D792163E9C100FEBE2A /* PlayersController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersController.swift; sourceTree = "<group>"; };
@@ -96,6 +112,29 @@
 			path = NBATestApp;
 			sourceTree = "<group>";
 		};
+		FA9D3A19217609FE00CFF3CD /* NBA Schedule API */ = {
+			isa = PBXGroup;
+			children = (
+				FA9D3A0D2176023700CFF3CD /* SCDAPIResponse.swift */,
+				FA9D3A0F2176030F00CFF3CD /* SCDAPIMonthSCD.swift */,
+				FA9D3A11217603A000CFF3CD /* SCDAPIMonth.swift */,
+				FA9D3A132176044F00CFF3CD /* SCDAPIGame.swift */,
+				FA9D3A15217604F000CFF3CD /* SCDAPITeam.swift */,
+			);
+			path = "NBA Schedule API";
+			sourceTree = "<group>";
+		};
+		FA9D3A1A21760A1700CFF3CD /* NBA Stats API */ = {
+			isa = PBXGroup;
+			children = (
+				FABB4D7D2163FABD00FEBE2A /* APIResponse.swift */,
+				FABB4D822163FBF700FEBE2A /* APIParameters.swift */,
+				FABB4D802163FB5B00FEBE2A /* APIResultSets.swift */,
+				FABB4D862164B2FA00FEBE2A /* APIRowSet.swift */,
+			);
+			path = "NBA Stats API";
+			sourceTree = "<group>";
+		};
 		FABB4D762163E95A00FEBE2A /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -111,10 +150,11 @@
 			children = (
 				FA80FC4E2163BC6B00452C5A /* Team.swift */,
 				FABB4D7B2163EB2800FEBE2A /* Player.swift */,
-				FABB4D7D2163FABD00FEBE2A /* APIResponse.swift */,
-				FABB4D822163FBF700FEBE2A /* APIParameters.swift */,
-				FABB4D802163FB5B00FEBE2A /* APIResultSets.swift */,
-				FABB4D862164B2FA00FEBE2A /* APIRowSet.swift */,
+				FA9D3A1B21761A0000CFF3CD /* Schedule.swift */,
+				FA9D3A1D21761B4E00CFF3CD /* ScheduleMonth.swift */,
+				FA9D3A1F21761BC600CFF3CD /* ScheduleGame.swift */,
+				FA9D3A1A21760A1700CFF3CD /* NBA Stats API */,
+				FA9D3A19217609FE00CFF3CD /* NBA Schedule API */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -192,18 +232,26 @@
 			files = (
 				FABB4D852164ABFF00FEBE2A /* APIManager.swift in Sources */,
 				FABB4D782163E98C00FEBE2A /* PlayerCell.swift in Sources */,
+				FA9D3A0E2176023700CFF3CD /* SCDAPIResponse.swift in Sources */,
 				FA80FC512163C3A300452C5A /* TeamCell.swift in Sources */,
+				FA9D3A142176044F00CFF3CD /* SCDAPIGame.swift in Sources */,
+				FA9D3A102176030F00CFF3CD /* SCDAPIMonthSCD.swift in Sources */,
 				FABB4D812163FB5B00FEBE2A /* APIResultSets.swift in Sources */,
 				FA80FC4F2163BC6B00452C5A /* Team.swift in Sources */,
 				FA80FC4D2163BA8C00452C5A /* TeamsController.swift in Sources */,
+				FA9D3A12217603A000CFF3CD /* SCDAPIMonth.swift in Sources */,
 				FABB4D832163FBF700FEBE2A /* APIParameters.swift in Sources */,
 				FABB4D752163E24000FEBE2A /* DivisionCell.swift in Sources */,
+				FA9D3A1C21761A0000CFF3CD /* Schedule.swift in Sources */,
 				FABB4D872164B2FA00FEBE2A /* APIRowSet.swift in Sources */,
+				FA9D3A2021761BC600CFF3CD /* ScheduleGame.swift in Sources */,
+				FA9D3A1E21761B4E00CFF3CD /* ScheduleMonth.swift in Sources */,
 				FABB4D7C2163EB2800FEBE2A /* Player.swift in Sources */,
 				FA80FC392163B5DF00452C5A /* AppDelegate.swift in Sources */,
 				FABB4D7A2163E9C100FEBE2A /* PlayersController.swift in Sources */,
 				FADFBCFA216FA04100A92EB5 /* PlayersNavBarTitleView.swift in Sources */,
 				FA9D3A0C2175028600CFF3CD /* PickerAlertController.swift in Sources */,
+				FA9D3A16217604F000CFF3CD /* SCDAPITeam.swift in Sources */,
 				FABB4D7E2163FABD00FEBE2A /* APIResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

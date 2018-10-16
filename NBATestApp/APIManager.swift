@@ -110,6 +110,49 @@ class APIManager {
         }
     }
     
+    func getSchedule( completion: @escaping (Schedule) ->()) {
+        let url = "https://data.nba.com/data/10s/v2015/json/mobile_teams/nba/2018/league/00_full_schedule.json"
+        
+        fetchData(fromURL: url) { (data) in
+        
+            do {
+                
+                let APIResponse = try JSONDecoder().decode(SCDAPIResponse.self, from: data!)
+                let monthSCDArray = APIResponse.lscd
+                
+                var months = [ScheduleMonth]()
+                
+                for (index, monthSCD) in monthSCDArray.enumerated() {
+                    var games = [ScheduleGame]()
+                    for gameSCD in monthSCDArray[index].mscd.g {
+                        
+                        let game = ScheduleGame.init(id: gameSCD.gid,
+                                                     code: gameSCD.gcode,
+                                                     timeEST: gameSCD.etm,
+                                                     type: ScheduleGame.GameType.init(rawValue: gameSCD.st)!,
+                                                     homeId: gameSCD.h.tid,
+                                                     homeRecord: gameSCD.h.re,
+                                                     homeScore: gameSCD.h.s,
+                                                     visitorId: gameSCD.v.tid,
+                                                     visitorRecord: gameSCD.v.re,
+                                                     visitorScore: gameSCD.v.s)
+                        games.append(game)
+                    }
+                    let month = ScheduleMonth.init(name: monthSCD.mscd.mon, games: games)
+                    months.append(month)
+                }
+                
+                let schedule = Schedule.init(months: months)
+                
+                completion(schedule)
+                
+            } catch let error {
+                print("Error serialization json: ", error)
+            }
+            
+        }
+    }
+    
 
     
 }

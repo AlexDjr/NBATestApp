@@ -15,6 +15,10 @@ class TeamsController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.alwaysBounceVertical = true
+        
+        APIManager.sharedManager.getSchedule { schedule in
+            print(schedule)
+        }
     }
 
     

@@ -10,7 +10,6 @@
 		FA80FC392163B5DF00452C5A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA80FC382163B5DF00452C5A /* AppDelegate.swift */; };
 		FA80FC3E2163B5DF00452C5A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA80FC3C2163B5DF00452C5A /* Main.storyboard */; };
 		FA80FC432163B5E100452C5A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA80FC412163B5E100452C5A /* LaunchScreen.storyboard */; };
-		FA80FC4B2163B8B300452C5A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA80FC4A2163B8B300452C5A /* Assets.xcassets */; };
 		FA80FC4D2163BA8C00452C5A /* TeamsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA80FC4C2163BA8C00452C5A /* TeamsController.swift */; };
 		FA80FC4F2163BC6B00452C5A /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA80FC4E2163BC6B00452C5A /* Team.swift */; };
 		FA80FC512163C3A300452C5A /* TeamCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA80FC502163C3A300452C5A /* TeamCell.swift */; };
@@ -23,6 +22,10 @@
 		FA9D3A1C21761A0000CFF3CD /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9D3A1B21761A0000CFF3CD /* Schedule.swift */; };
 		FA9D3A1E21761B4E00CFF3CD /* ScheduleMonth.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9D3A1D21761B4E00CFF3CD /* ScheduleMonth.swift */; };
 		FA9D3A2021761BC600CFF3CD /* ScheduleGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9D3A1F21761BC600CFF3CD /* ScheduleGame.swift */; };
+		FA9D3A22217667A900CFF3CD /* TeamInfoSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9D3A21217667A900CFF3CD /* TeamInfoSegmentedControl.swift */; };
+		FA9D3A2B2177913000CFF3CD /* TeamInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9D3A2A2177913000CFF3CD /* TeamInfoController.swift */; };
+		FA9D3A2D2179F22B00CFF3CD /* ScheduleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9D3A2C2179F22A00CFF3CD /* ScheduleController.swift */; };
+		FA9D3A312179F91600CFF3CD /* ScheduleGameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9D3A302179F91600CFF3CD /* ScheduleGameCell.swift */; };
 		FABB4D752163E24000FEBE2A /* DivisionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABB4D742163E24000FEBE2A /* DivisionCell.swift */; };
 		FABB4D782163E98C00FEBE2A /* PlayerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABB4D772163E98C00FEBE2A /* PlayerCell.swift */; };
 		FABB4D7A2163E9C100FEBE2A /* PlayersController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABB4D792163E9C100FEBE2A /* PlayersController.swift */; };
@@ -32,7 +35,10 @@
 		FABB4D832163FBF700FEBE2A /* APIParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABB4D822163FBF700FEBE2A /* APIParameters.swift */; };
 		FABB4D852164ABFF00FEBE2A /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABB4D842164ABFF00FEBE2A /* APIManager.swift */; };
 		FABB4D872164B2FA00FEBE2A /* APIRowSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABB4D862164B2FA00FEBE2A /* APIRowSet.swift */; };
-		FADFBCFA216FA04100A92EB5 /* PlayersNavBarTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADFBCF9216FA04100A92EB5 /* PlayersNavBarTitleView.swift */; };
+		FADFBCFA216FA04100A92EB5 /* TeamInfoNavBarTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADFBCF9216FA04100A92EB5 /* TeamInfoNavBarTitleView.swift */; };
+		FAF82010217B632E00762091 /* TeamMenuBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF8200F217B632E00762091 /* TeamMenuBarView.swift */; };
+		FAF82014217F1BB700762091 /* TeamInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF82013217F1BB700762091 /* TeamInfoCell.swift */; };
+		FAF82018217F3D0B00762091 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAF82017217F3D0B00762091 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,7 +47,6 @@
 		FA80FC3D2163B5DF00452C5A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FA80FC422163B5E100452C5A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FA80FC442163B5E100452C5A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FA80FC4A2163B8B300452C5A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FA80FC4C2163BA8C00452C5A /* TeamsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsController.swift; sourceTree = "<group>"; };
 		FA80FC4E2163BC6B00452C5A /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
 		FA80FC502163C3A300452C5A /* TeamCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamCell.swift; sourceTree = "<group>"; };
@@ -54,6 +59,10 @@
 		FA9D3A1B21761A0000CFF3CD /* Schedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
 		FA9D3A1D21761B4E00CFF3CD /* ScheduleMonth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleMonth.swift; sourceTree = "<group>"; };
 		FA9D3A1F21761BC600CFF3CD /* ScheduleGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleGame.swift; sourceTree = "<group>"; };
+		FA9D3A21217667A900CFF3CD /* TeamInfoSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamInfoSegmentedControl.swift; sourceTree = "<group>"; };
+		FA9D3A2A2177913000CFF3CD /* TeamInfoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamInfoController.swift; sourceTree = "<group>"; };
+		FA9D3A2C2179F22A00CFF3CD /* ScheduleController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleController.swift; sourceTree = "<group>"; };
+		FA9D3A302179F91600CFF3CD /* ScheduleGameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleGameCell.swift; sourceTree = "<group>"; };
 		FABB4D742163E24000FEBE2A /* DivisionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DivisionCell.swift; sourceTree = "<group>"; };
 		FABB4D772163E98C00FEBE2A /* PlayerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerCell.swift; sourceTree = "<group>"; };
 		FABB4D792163E9C100FEBE2A /* PlayersController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersController.swift; sourceTree = "<group>"; };
@@ -63,7 +72,10 @@
 		FABB4D822163FBF700FEBE2A /* APIParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIParameters.swift; sourceTree = "<group>"; };
 		FABB4D842164ABFF00FEBE2A /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		FABB4D862164B2FA00FEBE2A /* APIRowSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRowSet.swift; sourceTree = "<group>"; };
-		FADFBCF9216FA04100A92EB5 /* PlayersNavBarTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersNavBarTitleView.swift; sourceTree = "<group>"; };
+		FADFBCF9216FA04100A92EB5 /* TeamInfoNavBarTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamInfoNavBarTitleView.swift; sourceTree = "<group>"; };
+		FAF8200F217B632E00762091 /* TeamMenuBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamMenuBarView.swift; sourceTree = "<group>"; };
+		FAF82013217F1BB700762091 /* TeamInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamInfoCell.swift; sourceTree = "<group>"; };
+		FAF82017217F3D0B00762091 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,16 +110,14 @@
 			children = (
 				FA80FC382163B5DF00452C5A /* AppDelegate.swift */,
 				FABB4D842164ABFF00FEBE2A /* APIManager.swift */,
-				FADFBCF9216FA04100A92EB5 /* PlayersNavBarTitleView.swift */,
-				FA9D3A0B2175028600CFF3CD /* PickerAlertController.swift */,
+				FAF82015217F268D00762091 /* Custom UI elements */,
 				FABB4D7F2163FB0600FEBE2A /* Model */,
 				FABB4D762163E95A00FEBE2A /* Cells */,
-				FA80FC4C2163BA8C00452C5A /* TeamsController.swift */,
-				FABB4D792163E9C100FEBE2A /* PlayersController.swift */,
+				FAF82016217F26AF00762091 /* Controllers */,
 				FA80FC3C2163B5DF00452C5A /* Main.storyboard */,
 				FA80FC412163B5E100452C5A /* LaunchScreen.storyboard */,
 				FA80FC442163B5E100452C5A /* Info.plist */,
-				FA80FC4A2163B8B300452C5A /* Assets.xcassets */,
+				FAF82017217F3D0B00762091 /* Assets.xcassets */,
 			);
 			path = NBATestApp;
 			sourceTree = "<group>";
@@ -141,6 +151,8 @@
 				FABB4D742163E24000FEBE2A /* DivisionCell.swift */,
 				FA80FC502163C3A300452C5A /* TeamCell.swift */,
 				FABB4D772163E98C00FEBE2A /* PlayerCell.swift */,
+				FA9D3A302179F91600CFF3CD /* ScheduleGameCell.swift */,
+				FAF82013217F1BB700762091 /* TeamInfoCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -157,6 +169,28 @@
 				FA9D3A19217609FE00CFF3CD /* NBA Schedule API */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		FAF82015217F268D00762091 /* Custom UI elements */ = {
+			isa = PBXGroup;
+			children = (
+				FADFBCF9216FA04100A92EB5 /* TeamInfoNavBarTitleView.swift */,
+				FA9D3A21217667A900CFF3CD /* TeamInfoSegmentedControl.swift */,
+				FA9D3A0B2175028600CFF3CD /* PickerAlertController.swift */,
+				FAF8200F217B632E00762091 /* TeamMenuBarView.swift */,
+			);
+			path = "Custom UI elements";
+			sourceTree = "<group>";
+		};
+		FAF82016217F26AF00762091 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				FA80FC4C2163BA8C00452C5A /* TeamsController.swift */,
+				FA9D3A2A2177913000CFF3CD /* TeamInfoController.swift */,
+				FABB4D792163E9C100FEBE2A /* PlayersController.swift */,
+				FA9D3A2C2179F22A00CFF3CD /* ScheduleController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -218,7 +252,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA80FC432163B5E100452C5A /* LaunchScreen.storyboard in Resources */,
-				FA80FC4B2163B8B300452C5A /* Assets.xcassets in Resources */,
+				FAF82018217F3D0B00762091 /* Assets.xcassets in Resources */,
 				FA80FC3E2163B5DF00452C5A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -238,8 +272,11 @@
 				FA9D3A102176030F00CFF3CD /* SCDAPIMonthSCD.swift in Sources */,
 				FABB4D812163FB5B00FEBE2A /* APIResultSets.swift in Sources */,
 				FA80FC4F2163BC6B00452C5A /* Team.swift in Sources */,
+				FA9D3A2B2177913000CFF3CD /* TeamInfoController.swift in Sources */,
+				FA9D3A22217667A900CFF3CD /* TeamInfoSegmentedControl.swift in Sources */,
 				FA80FC4D2163BA8C00452C5A /* TeamsController.swift in Sources */,
 				FA9D3A12217603A000CFF3CD /* SCDAPIMonth.swift in Sources */,
+				FAF82014217F1BB700762091 /* TeamInfoCell.swift in Sources */,
 				FABB4D832163FBF700FEBE2A /* APIParameters.swift in Sources */,
 				FABB4D752163E24000FEBE2A /* DivisionCell.swift in Sources */,
 				FA9D3A1C21761A0000CFF3CD /* Schedule.swift in Sources */,
@@ -249,10 +286,13 @@
 				FABB4D7C2163EB2800FEBE2A /* Player.swift in Sources */,
 				FA80FC392163B5DF00452C5A /* AppDelegate.swift in Sources */,
 				FABB4D7A2163E9C100FEBE2A /* PlayersController.swift in Sources */,
-				FADFBCFA216FA04100A92EB5 /* PlayersNavBarTitleView.swift in Sources */,
+				FADFBCFA216FA04100A92EB5 /* TeamInfoNavBarTitleView.swift in Sources */,
 				FA9D3A0C2175028600CFF3CD /* PickerAlertController.swift in Sources */,
 				FA9D3A16217604F000CFF3CD /* SCDAPITeam.swift in Sources */,
+				FA9D3A312179F91600CFF3CD /* ScheduleGameCell.swift in Sources */,
 				FABB4D7E2163FABD00FEBE2A /* APIResponse.swift in Sources */,
+				FAF82010217B632E00762091 /* TeamMenuBarView.swift in Sources */,
+				FA9D3A2D2179F22B00CFF3CD /* ScheduleController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

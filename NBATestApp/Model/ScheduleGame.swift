@@ -12,6 +12,7 @@ struct ScheduleGame {
     var id : String
     var code : String
     var timeEST : String
+    var date : String
     var type : GameType
     var homeId : Int
     var homeRecord : String

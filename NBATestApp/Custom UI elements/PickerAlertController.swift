@@ -23,12 +23,6 @@ class PickerAlertController: UIAlertController {
         setup(withTeam: team, season: season)
     }
     
-//    init(withTeam team: Team ) {
-//        self.team = team
-//        super.init(nibName: nil, bundle: nil)
-//        setup(withTeam: team)
-//    }
-    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

@@ -10,7 +10,7 @@ import UIKit
 
 class APIManager {
     
-   static var sharedManager = APIManager()
+   static let sharedManager = APIManager()
     
    func fetchData(fromURL url: String, completion: @escaping (Data?) -> ()) {
         guard let url = URL(string: url) else { return }
@@ -85,8 +85,7 @@ class APIManager {
         }
         
         getImagesFromURLs(imageURLs) { (images : [UIImage], imgCount : Int) in
-//            возвращаем в PlayersController массив с картинками только тогда,
-//            когда были загружены картинки для каждого игрока
+//            returning only when images for each player have been added
             if imgCount == players.count {
                 completion(images)
             }
@@ -129,6 +128,7 @@ class APIManager {
                         let game = ScheduleGame.init(id: gameSCD.gid,
                                                      code: gameSCD.gcode,
                                                      timeEST: gameSCD.etm,
+                                                     date: gameSCD.gdte,
                                                      type: ScheduleGame.GameType.init(rawValue: gameSCD.st)!,
                                                      homeId: gameSCD.h.tid,
                                                      homeRecord: gameSCD.h.re,

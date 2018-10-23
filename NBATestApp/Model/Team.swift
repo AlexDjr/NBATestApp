@@ -48,6 +48,17 @@ struct Team {
         }
     }
     
+    static func getTeamNameById(_ id: Int) -> String? {
+        for division in arrTeams {
+            for team in division {
+                if team.id == id {
+                    return team.name
+                }
+            }
+        }
+        return nil
+    }
+    
 }
 
 let arrTeams = [

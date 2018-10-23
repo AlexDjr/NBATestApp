@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PlayersNavBarTitleView : UIStackView {
+class TeamInfoNavBarTitleView : UIStackView {
     var teamNameLabel : UILabel
     var seasonButton : UIButton
     
@@ -25,26 +25,28 @@ class PlayersNavBarTitleView : UIStackView {
         setupView(teamName: teamName, season: season)
         
     }
-
+    
     
     required init(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
     private func setupView(teamName: String, season: String) {
-        self.axis = .vertical
-        self.addArrangedSubview(self.teamNameLabel)
-        self.addArrangedSubview(self.seasonButton)
+        axis = .vertical
+        addArrangedSubview(teamNameLabel)
+        addArrangedSubview(seasonButton)
         
-        self.teamNameLabel.text = teamName
-        self.teamNameLabel.textAlignment = .center
-        self.teamNameLabel.font = UIFont.systemFont(ofSize: 16, weight: .medium)
+        teamNameLabel.text = teamName
+        teamNameLabel.textColor = UIColor.white
+        teamNameLabel.textAlignment = .center
+        teamNameLabel.font = UIFont.systemFont(ofSize: 16, weight: .bold)
         
-        self.seasonButton.setTitle(season + " ⩔", for: .normal)
-        self.seasonButton.titleLabel?.font = UIFont.systemFont(ofSize: 12)
-        self.seasonButton.setTitleColor(UIColor(red: 0.0, green: 122/255, blue: 1.0, alpha: 1), for: .normal)
-        self.seasonButton.contentEdgeInsets = UIEdgeInsets(top: -1, left: 0, bottom: 0, right: 0)
+        
+        seasonButton.setTitle(season + " ⩔", for: .normal)
+        seasonButton.titleLabel?.font = UIFont.systemFont(ofSize: 12)
+        seasonButton.setTitleColor(UIColor.white, for: .normal)
+        seasonButton.contentEdgeInsets = UIEdgeInsets(top: -1, left: 0, bottom: 0, right: 0)
         
     }
-
+    
 }

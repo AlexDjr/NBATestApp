@@ -16,10 +16,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        UINavigationBar.appearance().backgroundColor = UIColor(red: 50/255, green: 95/255, blue: 215/255, alpha: 1)
-        //            disabling bottom line in navigation bar
-        UINavigationBar.appearance().shadowImage = UIImage()
-        UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let rootController = storyboard.instantiateViewController(withIdentifier: "TeamsController") as! TeamsController
+        let navigationController = ColorableNavigationController(rootViewController: rootController)
+        window = UIWindow(frame: UIScreen.main.bounds)
+        if let window = window {
+            window.rootViewController = navigationController
+            window.makeKeyAndVisible()
+        }
+        navigationController.navigationBar.isTranslucent = false
+        //            disabling bottom shadow line in navigation bar
+        navigationController.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navigationController.navigationBar.shadowImage = UIImage()
+        
         return true
     }
 

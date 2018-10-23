@@ -39,6 +39,7 @@
 		FAF82010217B632E00762091 /* TeamMenuBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF8200F217B632E00762091 /* TeamMenuBarView.swift */; };
 		FAF82014217F1BB700762091 /* TeamInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF82013217F1BB700762091 /* TeamInfoCell.swift */; };
 		FAF82018217F3D0B00762091 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAF82017217F3D0B00762091 /* Assets.xcassets */; };
+		FAF8201A217F550E00762091 /* ColorableNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF82019217F550E00762091 /* ColorableNavigationController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,6 +77,7 @@
 		FAF8200F217B632E00762091 /* TeamMenuBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamMenuBarView.swift; sourceTree = "<group>"; };
 		FAF82013217F1BB700762091 /* TeamInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamInfoCell.swift; sourceTree = "<group>"; };
 		FAF82017217F3D0B00762091 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FAF82019217F550E00762091 /* ColorableNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorableNavigationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +118,7 @@
 				FAF82016217F26AF00762091 /* Controllers */,
 				FA80FC3C2163B5DF00452C5A /* Main.storyboard */,
 				FA80FC412163B5E100452C5A /* LaunchScreen.storyboard */,
+				FAF82019217F550E00762091 /* ColorableNavigationController.swift */,
 				FA80FC442163B5E100452C5A /* Info.plist */,
 				FAF82017217F3D0B00762091 /* Assets.xcassets */,
 			);
@@ -275,6 +278,7 @@
 				FA9D3A2B2177913000CFF3CD /* TeamInfoController.swift in Sources */,
 				FA9D3A22217667A900CFF3CD /* TeamInfoSegmentedControl.swift in Sources */,
 				FA80FC4D2163BA8C00452C5A /* TeamsController.swift in Sources */,
+				FAF8201A217F550E00762091 /* ColorableNavigationController.swift in Sources */,
 				FA9D3A12217603A000CFF3CD /* SCDAPIMonth.swift in Sources */,
 				FAF82014217F1BB700762091 /* TeamInfoCell.swift in Sources */,
 				FABB4D832163FBF700FEBE2A /* APIParameters.swift in Sources */,

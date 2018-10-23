@@ -11,14 +11,20 @@ import UIKit
 class TeamInfoSegmentedControl: UISegmentedControl {
     
     var bottomBar = UIView()
+    var selectedColor = UIColor()
     
     init() {
         super.init(frame: CGRect.zero)
-        setupSegmentedControl()
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    convenience init(color: UIColor) {
+        self.init()
+        self.selectedColor = color
+        setupSegmentedControl()
     }
     
     func setupSegmentedControl(){
@@ -33,11 +39,11 @@ class TeamInfoSegmentedControl: UISegmentedControl {
         backgroundColor = .clear
         
         bottomBar.translatesAutoresizingMaskIntoConstraints = false
-        bottomBar.backgroundColor = UIColor.red
+        bottomBar.backgroundColor = selectedColor
         addSubview(bottomBar)
         
         bottomBar.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
-        bottomBar.heightAnchor.constraint(equalToConstant: 2).isActive = true
+        bottomBar.heightAnchor.constraint(equalToConstant: 3).isActive = true
         bottomBar.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
         bottomBar.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 1 / CGFloat(numberOfSegments)).isActive = true
         

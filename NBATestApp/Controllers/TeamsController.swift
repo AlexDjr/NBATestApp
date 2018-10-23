@@ -10,21 +10,24 @@ import UIKit
 
 private let reuseIdentifier = "TeamCell"
 
-class TeamsController: UICollectionViewController {
+class TeamsController: UICollectionViewController, NavigationBarColorable {
     
     var seasonSchedule : Schedule?
+    var nbaLogoView : UIImageView?
+    
+    var navigationTintColor: UIColor? { return UIColor.white }
+    var navigationBarTintColor: UIColor? { return UIColor.white }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .default
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //        customizing navigation bar appearance
-        navigationController?.navigationBar.barStyle = .black
-        navigationController?.navigationBar.tintColor = UIColor.white
-        
-        //        customizing status bar
-        let statusBarBackgroundView = UIView(frame: UIApplication.shared.statusBarFrame)
-        statusBarBackgroundView.backgroundColor = UIColor(red: 50/255, green: 95/255, blue: 215/255, alpha: 1)
-        view.addSubview(statusBarBackgroundView)
+        nbaLogoView = UIImageView(image: UIImage(named: "nba-logo-header"))
+        nbaLogoView!.contentMode = .scaleAspectFit
+        navigationItem.titleView = nbaLogoView
         
         collectionView.alwaysBounceVertical = true
         
@@ -33,7 +36,6 @@ class TeamsController: UICollectionViewController {
             print("Schedule downloaded")
         }
     }
-    
     
     // MARK: - UICollectionViewDataSource
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -52,38 +54,22 @@ class TeamsController: UICollectionViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        
         var header = DivisionCell()
         if kind == UICollectionView.elementKindSectionHeader {
             header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "DivisionCell", for: indexPath) as! DivisionCell
             header.divisionNameLabel.text = Division.fromHashValue(hashValue: indexPath.section)?.rawValue.uppercased() ?? " "
-            
         }
-        
         return header
     }
     
     
-    // MARK: - Navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        if segue.identifier == "ShowPlayers" {
-            if let indexPaths = self.collectionView.indexPathsForSelectedItems {
-                let playersVC = segue.destination as! PlayersController
-                playersVC.team = arrTeams[indexPaths[0].section][indexPaths[0].row]
-                
-            }
-        }
-        
-        if segue.identifier == "ShowTeamInfo" {
-            if let indexPaths = self.collectionView.indexPathsForSelectedItems {
-                let teamInfoVC = segue.destination as! TeamInfoController
-                let team = arrTeams[indexPaths[0].section][indexPaths[0].row]
-                teamInfoVC.team = team
-                teamInfoVC.teamSchedule = getTeamSchedule(team)
-            }
-        }
-        
+    // MARK: - UICollectionViewDelegate
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let teamInfoVC = TeamInfoController()
+        let team = arrTeams[indexPath.section][indexPath.row]
+        teamInfoVC.team = team
+        teamInfoVC.teamSchedule = getTeamSchedule(team)
+        navigationController?.pushViewController(teamInfoVC, animated: true)
     }
     
     

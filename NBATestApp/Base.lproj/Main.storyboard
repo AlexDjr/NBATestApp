@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0Qg-oB-utD">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1Au-1b-4hd">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Teams-->
+        <!--Teams Controller-->
         <scene sceneID="eXd-QO-qf7">
             <objects>
-                <collectionViewController id="1Au-1b-4hd" customClass="TeamsController" customModule="NBATestApp" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController storyboardIdentifier="TeamsController" id="1Au-1b-4hd" customClass="TeamsController" customModule="NBATestApp" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="EiM-3s-SY7">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -39,7 +39,6 @@
                                 </view>
                                 <connections>
                                     <outlet property="teamLogo" destination="px7-aI-1Ra" id="NDS-bv-aOJ"/>
-                                    <segue destination="K1Q-jV-V6l" kind="show" identifier="ShowTeamInfo" id="yk3-lD-QK4"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -67,7 +66,7 @@
                             <outlet property="delegate" destination="1Au-1b-4hd" id="Ubd-sB-raQ"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" title="Teams" id="KjM-c6-I22"/>
+                    <navigationItem key="navigationItem" id="KjM-c6-I22"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O7u-7m-RJB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -394,24 +393,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gSv-ra-8cM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1794" y="102"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="gme-Zv-1h8">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0Qg-oB-utD" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="94V-YK-7KB">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="1Au-1b-4hd" kind="relationship" relationship="rootViewController" id="Rqa-r3-HkT"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ybr-4R-eid" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="53.600000000000001" y="111.99400299850076"/>
         </scene>
     </scenes>
 </document>

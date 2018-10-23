@@ -109,7 +109,7 @@ class PlayersController: UITableViewController, PickerAlertDelegate {
         let height : CGFloat = tableView.frame.height
         let newLoadingView = UIView()
         newLoadingView.frame = CGRect(x: x, y: y, width: width, height: height)
-        newLoadingView.backgroundColor = UIColor.red
+        newLoadingView.backgroundColor = UIColor.white
         
         spinner.style = .gray
         spinner.frame = CGRect(x: 0, y: 0, width: 30, height: 30)

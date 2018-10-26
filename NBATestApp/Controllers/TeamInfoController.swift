@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TeamInfoController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, NavigationBarColorable {
+class TeamInfoController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, NavigationBarColorable {
     
     var team : Team?
     var teamSchedule : Schedule?
@@ -40,6 +40,7 @@ class TeamInfoController: UIViewController, UICollectionViewDataSource, UICollec
         var viewController = storyboard.instantiateViewController(withIdentifier: "ScheduleController") as! ScheduleController
         viewController.team = team
         viewController.teamSchedule = teamSchedule
+        viewController.parentVC = self
         self.add(asChildViewController: viewController)
         return viewController
     }()
@@ -47,6 +48,8 @@ class TeamInfoController: UIViewController, UICollectionViewDataSource, UICollec
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = team?.primaryColor
+        
         setupNavBar()
         setupTeamMenuBar()
         
@@ -54,20 +57,6 @@ class TeamInfoController: UIViewController, UICollectionViewDataSource, UICollec
         
         var preferredStatusBarStyle: UIStatusBarStyle {
             return .lightContent
-        }
-    }
-
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        UIView.animate(withDuration: 0.2) {
-            self.teamMenuBar.backgroundColor = self.team?.primaryColor
-        }
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        UIView.animate(withDuration: 0.2) {
-            self.teamMenuBar.backgroundColor = .white
         }
     }
     
@@ -97,6 +86,10 @@ class TeamInfoController: UIViewController, UICollectionViewDataSource, UICollec
         }
     }
     
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: collectionView.frame.width, height: collectionView.frame.height)
+    }
+    
     
     //    MARK: - Methods
     private func setupNavBar() {
@@ -110,13 +103,14 @@ class TeamInfoController: UIViewController, UICollectionViewDataSource, UICollec
     private func setupTeamMenuBar() {
         view.addSubview(teamMenuBar)
         teamMenuBar.translatesAutoresizingMaskIntoConstraints = false
-        teamMenuBar.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-        teamMenuBar.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        teamMenuBar.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         teamMenuBar.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        teamMenuBar.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
+        teamMenuBar.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
+        teamMenuBar.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
         
         if let team = team {
             teamInfoSegmentedControl = TeamInfoSegmentedControl(color: team.secondColor)
+            teamMenuBar.backgroundColor = team.primaryColor
         }
         teamMenuBar.addSubview(teamInfoSegmentedControl)
         teamInfoSegmentedControl.translatesAutoresizingMaskIntoConstraints = false
@@ -126,20 +120,22 @@ class TeamInfoController: UIViewController, UICollectionViewDataSource, UICollec
     }
     
     private func setupTeamInfoView() {
-        
-        let navBarHeight = navigationController!.navigationBar.frame.height + UIApplication.shared.keyWindow!.safeAreaInsets.top
-        
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         layout.minimumLineSpacing = 0
-        layout.itemSize = CGSize(width: view.frame.width, height: view.frame.height - 40 - navBarHeight)
         
-        teamInfoView = UICollectionView(frame: CGRect(x: 0, y: 40, width: view.frame.width, height: view.frame.height - 40 - navBarHeight), collectionViewLayout: layout)
+        teamInfoView = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
         teamInfoView.isPagingEnabled = true
         teamInfoView.backgroundColor = UIColor.white
         teamInfoView.dataSource = self
         teamInfoView.delegate = self
         view.addSubview(teamInfoView)
+        
+        teamInfoView.translatesAutoresizingMaskIntoConstraints = false
+        teamInfoView.topAnchor.constraint(equalTo: teamMenuBar.bottomAnchor).isActive = true
+        teamInfoView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        teamInfoView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
+        teamInfoView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
         
         teamInfoView.register(TeamInfoCell.self, forCellWithReuseIdentifier: TeamInfoCell.reuseIdentifier)
     }
@@ -154,7 +150,7 @@ class TeamInfoController: UIViewController, UICollectionViewDataSource, UICollec
         UIView.animate(withDuration: 0.3) {
             self.teamInfoSegmentedControl.bottomBar.frame.origin.x = (self.teamInfoSegmentedControl.frame.width / CGFloat(self.teamInfoSegmentedControl.numberOfSegments)) * CGFloat(self.teamInfoSegmentedControl.selectedSegmentIndex)
             
-            //            moving collection view to needed cell
+            //  moving collection view to needed cell
             let indexPath = IndexPath(item: self.teamInfoSegmentedControl.selectedSegmentIndex, section: 0)
             self.teamInfoView.scrollToItem(at: indexPath, at: [], animated: true)
         }

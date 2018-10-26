@@ -12,11 +12,12 @@ class ScheduleController: UITableViewController {
     
     var team : Team?
     var teamSchedule : Schedule?
+    var parentVC : TeamInfoController?
+    var navBarIsHidden = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.allowsSelection = false
-        
     }
     
     // MARK: - UITableViewDataSource
@@ -57,12 +58,12 @@ class ScheduleController: UITableViewController {
         if game.timeEST.contains("T") {
             let index = game.timeEST.lastIndex(of: "T")!
             cell.gameTime.text = String(game.timeEST.suffix(from: index))
-            
         }
-        
         return cell
     }
     
+    
+    //    MARK: - UITableViewDelegate
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 90
     }
@@ -71,4 +72,28 @@ class ScheduleController: UITableViewController {
         return teamSchedule?.months[section].name ?? ""
     }
     
+    
+    //    MARK: - UIScrollViewDelegate
+    override func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        
+        if navBarIsHidden == true && targetContentOffset.pointee.y < scrollView.contentOffset.y && velocity.y <= -1.3 {
+            navigationController?.setNavigationBarHidden(false, animated: true)
+            navBarIsHidden = false
+            //  calling this to re-lay content (particylary items height) in collection view
+            parentVC?.teamInfoView.collectionViewLayout.invalidateLayout()
+        } else if navBarIsHidden == false && targetContentOffset.pointee.y > scrollView.contentOffset.y && velocity.y >= 1.3 {
+            navigationController?.setNavigationBarHidden(true, animated: true)
+            navBarIsHidden = true
+            parentVC?.teamInfoView.collectionViewLayout.invalidateLayout()
+        }
+    }
+    
+    override func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if navBarIsHidden == true && scrollView.contentOffset.y <= 0 {
+            navigationController?.setNavigationBarHidden(false, animated: true)
+            navBarIsHidden = false
+            parentVC?.teamInfoView.collectionViewLayout.invalidateLayout()
+        }
+    }
+
 }

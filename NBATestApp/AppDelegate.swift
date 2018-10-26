@@ -25,7 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             window.makeKeyAndVisible()
         }
         navigationController.navigationBar.isTranslucent = false
-        //            disabling bottom shadow line in navigation bar
+        //  disabling bottom shadow line in navigation bar
         navigationController.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationController.navigationBar.shadowImage = UIImage()
         

@@ -12,6 +12,10 @@ class ScheduleController: UITableViewController {
     
     var team : Team?
     var teamSchedule : Schedule?
+    var season = "2018-19"
+    let spinner = UIActivityIndicatorView()
+    var loadingView = UIView()
+    
     var parentVC : TeamInfoController?
     var navBarIsHidden = false
     
@@ -95,5 +99,81 @@ class ScheduleController: UITableViewController {
             parentVC?.teamInfoView.collectionViewLayout.invalidateLayout()
         }
     }
+    
+    
+    //    MARK: - API GET Methods
+    private func getSchedule() {
+        APIManager.sharedManager.getTeamSchedule(team!, season: season) { schedule in
+            if let teamSchedule = schedule {
+                DispatchQueue.main.async {
+                    self.teamSchedule = teamSchedule
+                    self.tableView.reloadData()
+                    self.removeLoadingScreen()
+                }
+            } else {
+                DispatchQueue.main.async {
+                    self.teamSchedule = nil
+                    
+                    let alert = UIAlertController(title: nil, message: "No schedule available for this season", preferredStyle: .alert)
+                    let cancelAction = UIAlertAction(title: "OK", style: .default, handler: { alert in
+                        self.tableView.reloadData()
+                        self.removeLoadingScreen()
+                    })
+                    
+                    alert.addAction(cancelAction)
+                    self.present(alert, animated: true, completion: nil)
+                }
+            }
+        }
+    }
+    
+    
+    //    MARK: - UI Methods
+    func updateTableForSeason(_ value: String) {
+        if season != value {
+            season = value
+            
+            if loadingView.isHidden == false {
+                removeLoadingScreen()
+            }
+            setLoadingScreen()
+            getSchedule()
+        }
+    }
+    
+    private func setLoadingScreen() {
+        let x : CGFloat = 0
+        let y : CGFloat = 0
+        let width : CGFloat = tableView.frame.width
+        let height : CGFloat = tableView.frame.height
+        let newLoadingView = UIView()
+        newLoadingView.frame = CGRect(x: x, y: y, width: width, height: height)
+        newLoadingView.backgroundColor = UIColor.white
+        
+        spinner.style = .gray
+        spinner.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
+        spinner.startAnimating()
+        spinner.hidesWhenStopped = true
+        spinner.center = newLoadingView.center
+        
+        newLoadingView.addSubview(spinner)
+        tableView.addSubview(newLoadingView)
+        
+        tableView.isScrollEnabled = false
+        if !tableView.visibleCells.isEmpty {
+            tableView.scrollToRow(at: IndexPath.init(row: 0, section: 0), at: .top, animated: false)
+        }
+        loadingView = newLoadingView
+        
+    }
+    
+    private func removeLoadingScreen() {
+        spinner.stopAnimating()
+        spinner.isHidden = true
+        loadingView.isHidden = true
+        tableView.separatorStyle = .singleLine
+        tableView.isScrollEnabled = true
+    }
+    
 
 }

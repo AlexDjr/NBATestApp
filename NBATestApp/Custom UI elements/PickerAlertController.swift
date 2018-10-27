@@ -35,6 +35,7 @@ class PickerAlertController: UIAlertController {
         self.team = team
         title = "CHOOSE NBA SEASON"
         message = "\n\n\n\n\n\n\n\n\n\n\n"
+        modalPresentationCapturesStatusBarAppearance = true
         
         let pickerView = UIPickerView(frame:CGRect.zero)
         pickerView.dataSource = self
@@ -74,5 +75,8 @@ extension PickerAlertController : UIPickerViewDataSource, UIPickerViewDelegate {
         return team!.seasons[row]
     }
 
-
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
 }

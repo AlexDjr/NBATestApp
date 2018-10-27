@@ -8,10 +8,11 @@
 
 import UIKit
 
-class TeamInfoController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, NavigationBarColorable {
+class TeamInfoController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, NavigationBarColorable, PickerAlertDelegate {
     
     var team : Team?
     var teamSchedule : Schedule?
+    var season = "2018-19"
     
     var navBarTitleView : TeamInfoNavBarTitleView?
     
@@ -91,6 +92,17 @@ class TeamInfoController: UIViewController, UICollectionViewDataSource, UICollec
     }
     
     
+    //    MARK: - PickerAlertDelegate
+    func handlePickerValue(_ value: String) {
+        if season != value {
+            season = value
+            scheduleVC.updateTableForSeason(value)
+            rosterVC.updateTableForSeason(value)
+            navBarTitleView?.seasonButton.setTitle(self.season + " ⩔", for: .normal)
+        }
+    }
+    
+    
     //    MARK: - Methods
     private func setupNavBar() {
         if let team = team {
@@ -157,7 +169,9 @@ class TeamInfoController: UIViewController, UICollectionViewDataSource, UICollec
     }
     
     @objc private func chooseSeason() {
-        rosterVC.chooseSeason()
+        let pickerAlert = PickerAlertController(withTeam: team!, season: season)
+        pickerAlert.delegate = self
+        present(pickerAlert, animated: true, completion: nil)
     }
     
 }

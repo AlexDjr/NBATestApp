@@ -31,11 +31,12 @@ class TeamsController: UICollectionViewController, NavigationBarColorable {
         
         collectionView.alwaysBounceVertical = true
         
-        APIManager.sharedManager.getSchedule { schedule in
+        APIManager.sharedManager.getSchedule(season: "2018-19") { schedule in
             self.seasonSchedule = schedule
             print("Schedule downloaded")
         }
     }
+    
     
     // MARK: - UICollectionViewDataSource
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -75,8 +76,7 @@ class TeamsController: UICollectionViewController, NavigationBarColorable {
     
     //    MARK: - Methods
     private func getTeamSchedule(_ team: Team) -> Schedule? {
-        
-        guard let schedule = seasonSchedule else { return nil}
+        guard let schedule = seasonSchedule else { return nil }
         
         var months = [ScheduleMonth]()
         let games = [ScheduleGame]()

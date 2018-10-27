@@ -19,5 +19,69 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NBATestApp/APIManager.swift"
+            timestampString = "562339453.164623"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "176"
+            endingLineNumber = "176"
+            landmarkName = "getTeamSchedule(_:season:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NBATestApp/APIManager.swift"
+            timestampString = "562339453.166505"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "160"
+            endingLineNumber = "160"
+            landmarkName = "getTeamSchedule(_:season:completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "NBATestApp.APIManager.getTeamSchedule(_: NBATestApp.Team, season: Swift.String, completion: (Swift.Optional&lt;NBATestApp.Schedule&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "NBATestApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alex/GIT/NBATestApp/NBATestApp/APIManager.swift"
+                  timestampString = "562263224.176162"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "164"
+                  endingLineNumber = "164"
+                  offsetFromSymbolStart = "1233">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.Data&gt;) -&gt; () in NBATestApp.APIManager.getTeamSchedule(_: NBATestApp.Team, season: Swift.String, completion: (Swift.Optional&lt;NBATestApp.Schedule&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "NBATestApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alex/GIT/NBATestApp/NBATestApp/APIManager.swift"
+                  timestampString = "562263224.1837161"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "168"
+                  endingLineNumber = "168"
+                  offsetFromSymbolStart = "206">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

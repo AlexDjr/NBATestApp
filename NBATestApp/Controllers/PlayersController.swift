@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PlayersController: UITableViewController, PickerAlertDelegate {
+class PlayersController: UITableViewController {
     
     var team : Team?
     var players : [Player]?
@@ -47,7 +47,7 @@ class PlayersController: UITableViewController, PickerAlertDelegate {
         cell.playerHeight.text = players?[indexPath.row].height
         cell.playerWeight.text = players?[indexPath.row].weight
         cell.playerExpirience.text = players?[indexPath.row].expirience
-        cell.playerPhoto.image = players?[indexPath.row].photo!
+        cell.playerPhoto.image = players?[indexPath.row].photo
         
         return cell
     }
@@ -57,26 +57,11 @@ class PlayersController: UITableViewController, PickerAlertDelegate {
     }
     
     
-    //    MARK: - PickerAlertDelegate
-    func handlePickerValue(_ value: String) {
-        if season != value {
-            season = value
-            if loadingView.isHidden == false {
-                removeLoadingScreen()
-            }
-            setLoadingScreen()
-            getPlayers()
-            let parentVC = self.parent as! TeamInfoController
-            parentVC.navBarTitleView?.seasonButton.setTitle(self.season + " ⩔", for: .normal)
-        }
-    }
-    
-    
     //    MARK: - API GET Methods
     private func getPlayers() {
         APIManager.sharedManager.getPlayersOfTeam(id: team!.id, season: season) { (players : [Player]) in
-            self.players = players
-            self.getPlayersPhoto()
+                self.players = players
+                self.getPlayersPhoto()
         }
     }
     
@@ -86,7 +71,7 @@ class PlayersController: UITableViewController, PickerAlertDelegate {
         } else {
             APIManager.sharedManager.getPlayersPhoto(players!) { (images : [UIImage]) in
                 DispatchQueue.main.async {
-                    
+                
                     for index in self.players!.indices {
                         self.players![index].photo = images[index]
                     }
@@ -101,8 +86,19 @@ class PlayersController: UITableViewController, PickerAlertDelegate {
     
     
     //    MARK: - UI Methods
+    func updateTableForSeason(_ value: String) {
+        if season != value {
+            season = value
+            
+            if loadingView.isHidden == false {
+                removeLoadingScreen()
+            }
+            setLoadingScreen()
+            getPlayers()
+        }
+    }
+    
     private func setLoadingScreen() {
-        
         let x : CGFloat = 0
         let y : CGFloat = 0 
         let width : CGFloat = tableView.frame.width
@@ -121,7 +117,9 @@ class PlayersController: UITableViewController, PickerAlertDelegate {
         tableView.addSubview(newLoadingView)
         
         tableView.isScrollEnabled = false
-        tableView.scrollToRow(at: IndexPath.init(row: 0, section: 0), at: .top, animated: false)
+        if !tableView.visibleCells.isEmpty {
+            tableView.scrollToRow(at: IndexPath.init(row: 0, section: 0), at: .top, animated: false)
+        }
         
         loadingView = newLoadingView
         
@@ -133,13 +131,6 @@ class PlayersController: UITableViewController, PickerAlertDelegate {
         loadingView.isHidden = true
         tableView.separatorStyle = .singleLine
         tableView.isScrollEnabled = true
-    }
-    
-    @objc func chooseSeason() {
-        let pickerAlert = PickerAlertController(withTeam: team!, season: season)
-        pickerAlert.delegate = self
-        
-        present(pickerAlert, animated: true, completion: nil)
     }
     
 }

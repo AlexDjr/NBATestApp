@@ -109,8 +109,9 @@ class APIManager {
         }
     }
     
-    func getSchedule( completion: @escaping (Schedule) ->()) {
-        let url = "https://data.nba.com/data/10s/v2015/json/mobile_teams/nba/2018/league/00_full_schedule.json"
+    func getSchedule(season: String, completion: @escaping (Schedule?) ->()) {
+        let year = String(season.prefix(4))
+        let url = "https://data.nba.com/data/10s/v2015/json/mobile_teams/nba/\(year)/league/00_full_schedule.json"
         
         fetchData(fromURL: url) { (data) in
         
@@ -148,8 +149,32 @@ class APIManager {
                 
             } catch let error {
                 print("Error serialization json: ", error)
+                completion(nil)
             }
             
+        }
+    }
+    
+    func getTeamSchedule(_ team: Team, season: String, completion: @escaping (Schedule?) ->()) {
+        getSchedule(season: season) { schedule in
+            if let schedule = schedule {
+                var monthsTeam = [ScheduleMonth]()
+                let gamesTeam = [ScheduleGame]()
+                
+                for (index, month) in schedule.months.enumerated() {
+                    monthsTeam.append(ScheduleMonth(name: month.name, games: gamesTeam))
+                    for game in month.games {
+                        if game.homeId == team.id || game.visitorId == team.id {
+                            monthsTeam[index].games.append(game)
+                        }
+                    }
+                }
+                let monthsWithGames = monthsTeam.filter { !$0.games.isEmpty }
+                let teamSchedule = Schedule(months: monthsWithGames)
+                completion(teamSchedule)
+            } else {
+                completion(nil)
+            }
         }
     }
     

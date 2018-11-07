@@ -14,9 +14,12 @@ class ScheduleGameCell: UITableViewCell {
     @IBOutlet var homeLogo: UIImageView!
     @IBOutlet var visitorScore: UILabel!
     @IBOutlet var homeScore: UILabel!
-    @IBOutlet var gameTime: UILabel!
     @IBOutlet var gameDate: UILabel!
+    @IBOutlet var gameTime: UILabel!
     @IBOutlet var visitorRecord: UILabel!
     @IBOutlet var homeRecord: UILabel!
-
+    @IBOutlet var gameType: UILabel!
+    @IBOutlet var gameTypeView: UIView!
+    @IBOutlet var gameResult: UILabel!
+    
 }

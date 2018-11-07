@@ -42,8 +42,18 @@ class ScheduleController: UITableViewController {
         
         var visitorTeamName = ""
         var homeTeamName = ""
+        var isHomeGame = false
+        var isGamePlayed = false
         
         if game.homeId == team!.id {
+            isHomeGame = true
+        }
+        
+        if !game.homeScore.isEmpty {
+            isGamePlayed = true
+        }
+        
+        if isHomeGame {
             homeTeamName = team!.name
             visitorTeamName = Team.getTeamNameById(game.visitorId) ?? "no-logo"
         } else {
@@ -51,17 +61,51 @@ class ScheduleController: UITableViewController {
             visitorTeamName = team!.name
         }
         
+        if isGamePlayed {
+            cell.gameResult.isHidden = false
+            if Int(game.homeScore)! > Int(game.visitorScore)! {
+                cell.gameResult.text = isHomeGame ? "Win" : "Loss"
+                cell.gameResult.textColor = isHomeGame ? UIColor.init(red: 0/255, green: 144/255, blue: 81/255, alpha: 1) : UIColor.init(red: 255/255, green: 15/255, blue: 0/255, alpha: 1)
+            } else {
+                cell.gameResult.text = isHomeGame ? "Loss" : "Win"
+                cell.gameResult.textColor = isHomeGame ? UIColor.init(red: 255/255, green: 15/255, blue: 0/255, alpha: 1) : UIColor.init(red: 0/255, green: 144/255, blue: 81/255, alpha: 1)
+            }
+        } else {
+            cell.gameResult.isHidden = true
+        }
+        
         cell.visitorScore.text = game.visitorScore.count == 0 ? "-" : game.visitorScore
         cell.homeScore.text = game.homeScore.count == 0 ? "-" : game.homeScore
-        cell.gameDate.text = game.date
         cell.visitorLogo.image = UIImage(named: visitorTeamName)
         cell.homeLogo.image = UIImage(named: homeTeamName)
         cell.visitorRecord.text = game.visitorRecord
         cell.homeRecord.text = game.homeRecord
+        cell.gameDate.text = game.date
         
-        if game.timeEST.contains("T") {
-            let index = game.timeEST.lastIndex(of: "T")!
-            cell.gameTime.text = String(game.timeEST.suffix(from: index))
+        if let index = game.timeEST.index(of: "T") {
+            let indexAfter = game.timeEST.index(after: index)
+            let endIndex = game.timeEST.index(index, offsetBy: 5)
+            let time = game.timeEST[indexAfter...endIndex]
+            cell.gameTime.text = "  " + time
+        }
+        
+        switch game.type {
+        case .preseason:
+            cell.gameType.isHidden = false
+            cell.gameType.text = "Preseason"
+            cell.gameType.textColor = .darkText
+            cell.gameTypeView.backgroundColor = UIColor.init(red: 247/255, green: 247/255, blue: 247/255, alpha: 1)
+        case .regular:
+            cell.gameType.isHidden = true
+            cell.gameTypeView.backgroundColor = .clear
+        case .playoffs:
+            cell.gameType.isHidden = false
+            cell.gameType.text = "Playoffs"
+            cell.gameType.textColor = .white
+            cell.gameTypeView.backgroundColor = team?.primaryColor
+        default:
+            cell.gameType.isHidden = true
+            cell.gameTypeView.backgroundColor = .clear
         }
         return cell
     }

@@ -130,7 +130,7 @@ class APIManager {
                                                      code: gameSCD.gcode,
                                                      timeEST: gameSCD.etm,
                                                      date: gameSCD.gdte,
-                                                     type: ScheduleGame.GameType.init(rawValue: gameSCD.st)!,
+                                                     type: ScheduleGame.GameType.init(rawValue: String(gameSCD.gid.prefix(3)))!,
                                                      homeId: gameSCD.h.tid,
                                                      homeRecord: gameSCD.h.re,
                                                      homeScore: gameSCD.h.s,

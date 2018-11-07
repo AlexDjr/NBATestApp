@@ -22,9 +22,10 @@ struct ScheduleGame {
     var visitorScore : String
     
     enum GameType : String {
-        case regular = "1"
-        case playoffs = "2"
-        case preseason = "3"
+        case preseason = "001"
+        case regular = "002"
+        case allstar = "003"
+        case playoffs = "004"
     }
     
 }

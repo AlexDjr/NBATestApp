@@ -13,7 +13,6 @@ struct SCDAPIGame : Decodable {
     var gcode : String
     var etm : String
     var gdte : String
-    var st : String
     var v : SCDAPITeam
     var h : SCDAPITeam
 }

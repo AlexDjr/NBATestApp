@@ -37,6 +37,16 @@ class TeamsController: UICollectionViewController, NavigationBarColorable {
         }
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if let navController = navigationController {
+            if navController.navigationBar.isHidden {
+                navController.setNavigationBarHidden(false, animated: true)
+            }
+        }
+
+    }
+    
     
     // MARK: - UICollectionViewDataSource
     override func numberOfSections(in collectionView: UICollectionView) -> Int {

@@ -60,8 +60,17 @@ open class ColorableNavigationController: UINavigationController {
 		}
 		
 		self.navigationBar.barTintColor = colors.navigationBarTintColor
-	}
+	}    
     
+//  to make possible to swipe back when navigation bar is hidden
+    private var alwaysPoppableDelegate: AlwaysPoppableDelegate!
+    
+    override open func viewDidLoad() {
+        super.viewDidLoad()
+        
+        self.alwaysPoppableDelegate = AlwaysPoppableDelegate(navigationController: self, originalDelegate: self.interactivePopGestureRecognizer!.delegate!)
+        self.interactivePopGestureRecognizer!.delegate = self.alwaysPoppableDelegate
+    }
 }
 
 //  to make possible setting preferredStatusBarStyle in view controller

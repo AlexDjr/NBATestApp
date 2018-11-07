@@ -51,6 +51,12 @@ class TeamInfoController: UIViewController, UICollectionViewDataSource, UICollec
         super.viewDidLoad()
         view.backgroundColor = team?.primaryColor
         
+        if let navController = navigationController {
+            if navController.navigationBar.isHidden {
+                navController.setNavigationBarHidden(false, animated: false)
+            }
+        }
+        
         setupNavBar()
         setupTeamMenuBar()
         

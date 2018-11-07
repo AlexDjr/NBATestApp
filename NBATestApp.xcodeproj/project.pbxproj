@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA3E173921931263007E517A /* AlwaysPoppableDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3E173821931263007E517A /* AlwaysPoppableDelegate.swift */; };
 		FA80FC392163B5DF00452C5A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA80FC382163B5DF00452C5A /* AppDelegate.swift */; };
 		FA80FC3E2163B5DF00452C5A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA80FC3C2163B5DF00452C5A /* Main.storyboard */; };
 		FA80FC432163B5E100452C5A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA80FC412163B5E100452C5A /* LaunchScreen.storyboard */; };
@@ -43,6 +44,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FA3E173821931263007E517A /* AlwaysPoppableDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlwaysPoppableDelegate.swift; sourceTree = "<group>"; };
 		FA80FC352163B5DF00452C5A /* NBATestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NBATestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA80FC382163B5DF00452C5A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA80FC3D2163B5DF00452C5A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				FAF82019217F550E00762091 /* ColorableNavigationController.swift */,
+				FA3E173821931263007E517A /* AlwaysPoppableDelegate.swift */,
 			);
 			path = "Custom classes";
 			sourceTree = "<group>";
@@ -296,6 +299,7 @@
 				FA9D3A2021761BC600CFF3CD /* ScheduleGame.swift in Sources */,
 				FA9D3A1E21761B4E00CFF3CD /* ScheduleMonth.swift in Sources */,
 				FABB4D7C2163EB2800FEBE2A /* Player.swift in Sources */,
+				FA3E173921931263007E517A /* AlwaysPoppableDelegate.swift in Sources */,
 				FA80FC392163B5DF00452C5A /* AppDelegate.swift in Sources */,
 				FABB4D7A2163E9C100FEBE2A /* PlayersController.swift in Sources */,
 				FADFBCFA216FA04100A92EB5 /* TeamInfoNavBarTitleView.swift in Sources */,

@@ -50,8 +50,6 @@ open class ColorableNavigationController: UINavigationController {
 			guard let colors = self?.topViewController as? NavigationBarColorable else { return }
 			self?.setNavigationBarColors(colors)
 			})
-        
-        
 		
 		return popViewController
 	}
@@ -63,6 +61,7 @@ open class ColorableNavigationController: UINavigationController {
 		
 		self.navigationBar.barTintColor = colors.navigationBarTintColor
 	}
+    
 }
 
 //  to make possible setting preferredStatusBarStyle in view controller

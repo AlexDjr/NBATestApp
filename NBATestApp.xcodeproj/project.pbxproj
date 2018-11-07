@@ -91,6 +91,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FA3E173521930DAE007E517A /* Custom classes */ = {
+			isa = PBXGroup;
+			children = (
+				FAF82019217F550E00762091 /* ColorableNavigationController.swift */,
+			);
+			path = "Custom classes";
+			sourceTree = "<group>";
+		};
 		FA80FC2C2163B5DF00452C5A = {
 			isa = PBXGroup;
 			children = (
@@ -112,13 +120,13 @@
 			children = (
 				FA80FC382163B5DF00452C5A /* AppDelegate.swift */,
 				FABB4D842164ABFF00FEBE2A /* APIManager.swift */,
+				FA3E173521930DAE007E517A /* Custom classes */,
 				FAF82015217F268D00762091 /* Custom UI elements */,
 				FABB4D7F2163FB0600FEBE2A /* Model */,
 				FABB4D762163E95A00FEBE2A /* Cells */,
 				FAF82016217F26AF00762091 /* Controllers */,
 				FA80FC3C2163B5DF00452C5A /* Main.storyboard */,
 				FA80FC412163B5E100452C5A /* LaunchScreen.storyboard */,
-				FAF82019217F550E00762091 /* ColorableNavigationController.swift */,
 				FA80FC442163B5E100452C5A /* Info.plist */,
 				FAF82017217F3D0B00762091 /* Assets.xcassets */,
 			);

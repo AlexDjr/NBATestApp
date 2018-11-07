@@ -138,6 +138,7 @@ class TeamInfoController: UIViewController, UICollectionViewDataSource, UICollec
         
         teamInfoView = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
         teamInfoView.isPagingEnabled = true
+        teamInfoView.showsHorizontalScrollIndicator = false
         teamInfoView.backgroundColor = UIColor.white
         teamInfoView.dataSource = self
         teamInfoView.delegate = self

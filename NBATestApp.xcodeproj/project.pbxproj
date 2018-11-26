@@ -135,6 +135,15 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		FA3F5F3121AC586200F3A699 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FABB4D762163E95A00FEBE2A /* Cells */,
+				FAF82016217F26AF00762091 /* Controllers */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		FA80FC2C2163B5DF00452C5A = {
 			isa = PBXGroup;
 			children = (
@@ -161,8 +170,7 @@
 				FAF82015217F268D00762091 /* Custom UI elements */,
 				FABB4D7F2163FB0600FEBE2A /* Model */,
 				FA3F5F1821AC4D4F00F3A699 /* ViewModel */,
-				FABB4D762163E95A00FEBE2A /* Cells */,
-				FAF82016217F26AF00762091 /* Controllers */,
+				FA3F5F3121AC586200F3A699 /* View */,
 				FA80FC3C2163B5DF00452C5A /* Main.storyboard */,
 				FA80FC412163B5E100452C5A /* LaunchScreen.storyboard */,
 				FA80FC442163B5E100452C5A /* Info.plist */,

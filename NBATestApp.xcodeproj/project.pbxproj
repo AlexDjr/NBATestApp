@@ -8,12 +8,28 @@
 
 /* Begin PBXBuildFile section */
 		FA3E173921931263007E517A /* AlwaysPoppableDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3E173821931263007E517A /* AlwaysPoppableDelegate.swift */; };
+		FA3F5F0721AC4C8B00F3A699 /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3F5F0621AC4C8B00F3A699 /* Box.swift */; };
+		FA3F5F0921AC4CD800F3A699 /* TeamsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3F5F0821AC4CD800F3A699 /* TeamsViewModel.swift */; };
+		FA3F5F0B21AC4CFD00F3A699 /* TeamsCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3F5F0A21AC4CFD00F3A699 /* TeamsCellViewModel.swift */; };
+		FA3F5F0D21AC4D0800F3A699 /* TeamsSectionHeaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3F5F0C21AC4D0800F3A699 /* TeamsSectionHeaderViewModel.swift */; };
+		FA3F5F0F21AC4D1400F3A699 /* TeamInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3F5F0E21AC4D1400F3A699 /* TeamInfoViewModel.swift */; };
+		FA3F5F1121AC4D2500F3A699 /* ScheduleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3F5F1021AC4D2500F3A699 /* ScheduleViewModel.swift */; };
+		FA3F5F1321AC4D2F00F3A699 /* ScheduleGameCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3F5F1221AC4D2F00F3A699 /* ScheduleGameCellViewModel.swift */; };
+		FA3F5F1521AC4D3A00F3A699 /* PlayersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3F5F1421AC4D3A00F3A699 /* PlayersViewModel.swift */; };
+		FA3F5F1721AC4D4700F3A699 /* PlayersCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3F5F1621AC4D4700F3A699 /* PlayersCellViewModel.swift */; };
+		FA3F5F1D21AC4F5700F3A699 /* TeamInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3F5F1921AC4F5700F3A699 /* TeamInfoController.swift */; };
+		FA3F5F1E21AC4F5700F3A699 /* ScheduleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3F5F1A21AC4F5700F3A699 /* ScheduleController.swift */; };
+		FA3F5F1F21AC4F5700F3A699 /* TeamsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3F5F1B21AC4F5700F3A699 /* TeamsController.swift */; };
+		FA3F5F2021AC4F5700F3A699 /* PlayersController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3F5F1C21AC4F5700F3A699 /* PlayersController.swift */; };
+		FA3F5F2621AC4F7200F3A699 /* PlayerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3F5F2121AC4F7200F3A699 /* PlayerCell.swift */; };
+		FA3F5F2721AC4F7200F3A699 /* TeamInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3F5F2221AC4F7200F3A699 /* TeamInfoCell.swift */; };
+		FA3F5F2821AC4F7200F3A699 /* TeamCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3F5F2321AC4F7200F3A699 /* TeamCell.swift */; };
+		FA3F5F2921AC4F7200F3A699 /* DivisionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3F5F2421AC4F7200F3A699 /* DivisionCell.swift */; };
+		FA3F5F2A21AC4F7200F3A699 /* ScheduleGameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3F5F2521AC4F7200F3A699 /* ScheduleGameCell.swift */; };
 		FA80FC392163B5DF00452C5A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA80FC382163B5DF00452C5A /* AppDelegate.swift */; };
 		FA80FC3E2163B5DF00452C5A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA80FC3C2163B5DF00452C5A /* Main.storyboard */; };
 		FA80FC432163B5E100452C5A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA80FC412163B5E100452C5A /* LaunchScreen.storyboard */; };
-		FA80FC4D2163BA8C00452C5A /* TeamsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA80FC4C2163BA8C00452C5A /* TeamsController.swift */; };
 		FA80FC4F2163BC6B00452C5A /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA80FC4E2163BC6B00452C5A /* Team.swift */; };
-		FA80FC512163C3A300452C5A /* TeamCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA80FC502163C3A300452C5A /* TeamCell.swift */; };
 		FA9D3A0C2175028600CFF3CD /* PickerAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9D3A0B2175028600CFF3CD /* PickerAlertController.swift */; };
 		FA9D3A0E2176023700CFF3CD /* SCDAPIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9D3A0D2176023700CFF3CD /* SCDAPIResponse.swift */; };
 		FA9D3A102176030F00CFF3CD /* SCDAPIMonthSCD.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9D3A0F2176030F00CFF3CD /* SCDAPIMonthSCD.swift */; };
@@ -24,12 +40,6 @@
 		FA9D3A1E21761B4E00CFF3CD /* ScheduleMonth.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9D3A1D21761B4E00CFF3CD /* ScheduleMonth.swift */; };
 		FA9D3A2021761BC600CFF3CD /* ScheduleGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9D3A1F21761BC600CFF3CD /* ScheduleGame.swift */; };
 		FA9D3A22217667A900CFF3CD /* TeamInfoSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9D3A21217667A900CFF3CD /* TeamInfoSegmentedControl.swift */; };
-		FA9D3A2B2177913000CFF3CD /* TeamInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9D3A2A2177913000CFF3CD /* TeamInfoController.swift */; };
-		FA9D3A2D2179F22B00CFF3CD /* ScheduleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9D3A2C2179F22A00CFF3CD /* ScheduleController.swift */; };
-		FA9D3A312179F91600CFF3CD /* ScheduleGameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9D3A302179F91600CFF3CD /* ScheduleGameCell.swift */; };
-		FABB4D752163E24000FEBE2A /* DivisionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABB4D742163E24000FEBE2A /* DivisionCell.swift */; };
-		FABB4D782163E98C00FEBE2A /* PlayerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABB4D772163E98C00FEBE2A /* PlayerCell.swift */; };
-		FABB4D7A2163E9C100FEBE2A /* PlayersController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABB4D792163E9C100FEBE2A /* PlayersController.swift */; };
 		FABB4D7C2163EB2800FEBE2A /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABB4D7B2163EB2800FEBE2A /* Player.swift */; };
 		FABB4D7E2163FABD00FEBE2A /* APIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABB4D7D2163FABD00FEBE2A /* APIResponse.swift */; };
 		FABB4D812163FB5B00FEBE2A /* APIResultSets.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABB4D802163FB5B00FEBE2A /* APIResultSets.swift */; };
@@ -38,21 +48,36 @@
 		FABB4D872164B2FA00FEBE2A /* APIRowSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABB4D862164B2FA00FEBE2A /* APIRowSet.swift */; };
 		FADFBCFA216FA04100A92EB5 /* TeamInfoNavBarTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADFBCF9216FA04100A92EB5 /* TeamInfoNavBarTitleView.swift */; };
 		FAF82010217B632E00762091 /* TeamMenuBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF8200F217B632E00762091 /* TeamMenuBarView.swift */; };
-		FAF82014217F1BB700762091 /* TeamInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF82013217F1BB700762091 /* TeamInfoCell.swift */; };
 		FAF82018217F3D0B00762091 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAF82017217F3D0B00762091 /* Assets.xcassets */; };
 		FAF8201A217F550E00762091 /* ColorableNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF82019217F550E00762091 /* ColorableNavigationController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		FA3E173821931263007E517A /* AlwaysPoppableDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlwaysPoppableDelegate.swift; sourceTree = "<group>"; };
+		FA3F5F0621AC4C8B00F3A699 /* Box.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Box.swift; sourceTree = "<group>"; };
+		FA3F5F0821AC4CD800F3A699 /* TeamsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsViewModel.swift; sourceTree = "<group>"; };
+		FA3F5F0A21AC4CFD00F3A699 /* TeamsCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsCellViewModel.swift; sourceTree = "<group>"; };
+		FA3F5F0C21AC4D0800F3A699 /* TeamsSectionHeaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsSectionHeaderViewModel.swift; sourceTree = "<group>"; };
+		FA3F5F0E21AC4D1400F3A699 /* TeamInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamInfoViewModel.swift; sourceTree = "<group>"; };
+		FA3F5F1021AC4D2500F3A699 /* ScheduleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewModel.swift; sourceTree = "<group>"; };
+		FA3F5F1221AC4D2F00F3A699 /* ScheduleGameCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleGameCellViewModel.swift; sourceTree = "<group>"; };
+		FA3F5F1421AC4D3A00F3A699 /* PlayersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersViewModel.swift; sourceTree = "<group>"; };
+		FA3F5F1621AC4D4700F3A699 /* PlayersCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersCellViewModel.swift; sourceTree = "<group>"; };
+		FA3F5F1921AC4F5700F3A699 /* TeamInfoController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TeamInfoController.swift; path = NBATestApp/View/Controllers/TeamInfoController.swift; sourceTree = SOURCE_ROOT; };
+		FA3F5F1A21AC4F5700F3A699 /* ScheduleController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ScheduleController.swift; path = NBATestApp/View/Controllers/ScheduleController.swift; sourceTree = SOURCE_ROOT; };
+		FA3F5F1B21AC4F5700F3A699 /* TeamsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TeamsController.swift; path = NBATestApp/View/Controllers/TeamsController.swift; sourceTree = SOURCE_ROOT; };
+		FA3F5F1C21AC4F5700F3A699 /* PlayersController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlayersController.swift; path = NBATestApp/View/Controllers/PlayersController.swift; sourceTree = SOURCE_ROOT; };
+		FA3F5F2121AC4F7200F3A699 /* PlayerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlayerCell.swift; path = NBATestApp/View/Cells/PlayerCell.swift; sourceTree = SOURCE_ROOT; };
+		FA3F5F2221AC4F7200F3A699 /* TeamInfoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TeamInfoCell.swift; path = NBATestApp/View/Cells/TeamInfoCell.swift; sourceTree = SOURCE_ROOT; };
+		FA3F5F2321AC4F7200F3A699 /* TeamCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TeamCell.swift; path = NBATestApp/View/Cells/TeamCell.swift; sourceTree = SOURCE_ROOT; };
+		FA3F5F2421AC4F7200F3A699 /* DivisionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DivisionCell.swift; path = NBATestApp/View/Cells/DivisionCell.swift; sourceTree = SOURCE_ROOT; };
+		FA3F5F2521AC4F7200F3A699 /* ScheduleGameCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ScheduleGameCell.swift; path = NBATestApp/View/Cells/ScheduleGameCell.swift; sourceTree = SOURCE_ROOT; };
 		FA80FC352163B5DF00452C5A /* NBATestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NBATestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA80FC382163B5DF00452C5A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA80FC3D2163B5DF00452C5A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FA80FC422163B5E100452C5A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FA80FC442163B5E100452C5A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FA80FC4C2163BA8C00452C5A /* TeamsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsController.swift; sourceTree = "<group>"; };
 		FA80FC4E2163BC6B00452C5A /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
-		FA80FC502163C3A300452C5A /* TeamCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamCell.swift; sourceTree = "<group>"; };
 		FA9D3A0B2175028600CFF3CD /* PickerAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerAlertController.swift; sourceTree = "<group>"; };
 		FA9D3A0D2176023700CFF3CD /* SCDAPIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCDAPIResponse.swift; sourceTree = "<group>"; };
 		FA9D3A0F2176030F00CFF3CD /* SCDAPIMonthSCD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCDAPIMonthSCD.swift; sourceTree = "<group>"; };
@@ -63,12 +88,6 @@
 		FA9D3A1D21761B4E00CFF3CD /* ScheduleMonth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleMonth.swift; sourceTree = "<group>"; };
 		FA9D3A1F21761BC600CFF3CD /* ScheduleGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleGame.swift; sourceTree = "<group>"; };
 		FA9D3A21217667A900CFF3CD /* TeamInfoSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamInfoSegmentedControl.swift; sourceTree = "<group>"; };
-		FA9D3A2A2177913000CFF3CD /* TeamInfoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamInfoController.swift; sourceTree = "<group>"; };
-		FA9D3A2C2179F22A00CFF3CD /* ScheduleController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleController.swift; sourceTree = "<group>"; };
-		FA9D3A302179F91600CFF3CD /* ScheduleGameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleGameCell.swift; sourceTree = "<group>"; };
-		FABB4D742163E24000FEBE2A /* DivisionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DivisionCell.swift; sourceTree = "<group>"; };
-		FABB4D772163E98C00FEBE2A /* PlayerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerCell.swift; sourceTree = "<group>"; };
-		FABB4D792163E9C100FEBE2A /* PlayersController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersController.swift; sourceTree = "<group>"; };
 		FABB4D7B2163EB2800FEBE2A /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		FABB4D7D2163FABD00FEBE2A /* APIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResponse.swift; sourceTree = "<group>"; };
 		FABB4D802163FB5B00FEBE2A /* APIResultSets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResultSets.swift; sourceTree = "<group>"; };
@@ -77,7 +96,6 @@
 		FABB4D862164B2FA00FEBE2A /* APIRowSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRowSet.swift; sourceTree = "<group>"; };
 		FADFBCF9216FA04100A92EB5 /* TeamInfoNavBarTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamInfoNavBarTitleView.swift; sourceTree = "<group>"; };
 		FAF8200F217B632E00762091 /* TeamMenuBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamMenuBarView.swift; sourceTree = "<group>"; };
-		FAF82013217F1BB700762091 /* TeamInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamInfoCell.swift; sourceTree = "<group>"; };
 		FAF82017217F3D0B00762091 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FAF82019217F550E00762091 /* ColorableNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorableNavigationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -102,6 +120,21 @@
 			path = "Custom classes";
 			sourceTree = "<group>";
 		};
+		FA3F5F1821AC4D4F00F3A699 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				FA3F5F0821AC4CD800F3A699 /* TeamsViewModel.swift */,
+				FA3F5F0A21AC4CFD00F3A699 /* TeamsCellViewModel.swift */,
+				FA3F5F0C21AC4D0800F3A699 /* TeamsSectionHeaderViewModel.swift */,
+				FA3F5F0E21AC4D1400F3A699 /* TeamInfoViewModel.swift */,
+				FA3F5F1021AC4D2500F3A699 /* ScheduleViewModel.swift */,
+				FA3F5F1221AC4D2F00F3A699 /* ScheduleGameCellViewModel.swift */,
+				FA3F5F1421AC4D3A00F3A699 /* PlayersViewModel.swift */,
+				FA3F5F1621AC4D4700F3A699 /* PlayersCellViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		FA80FC2C2163B5DF00452C5A = {
 			isa = PBXGroup;
 			children = (
@@ -123,9 +156,11 @@
 			children = (
 				FA80FC382163B5DF00452C5A /* AppDelegate.swift */,
 				FABB4D842164ABFF00FEBE2A /* APIManager.swift */,
+				FA3F5F0621AC4C8B00F3A699 /* Box.swift */,
 				FA3E173521930DAE007E517A /* Custom classes */,
 				FAF82015217F268D00762091 /* Custom UI elements */,
 				FABB4D7F2163FB0600FEBE2A /* Model */,
+				FA3F5F1821AC4D4F00F3A699 /* ViewModel */,
 				FABB4D762163E95A00FEBE2A /* Cells */,
 				FAF82016217F26AF00762091 /* Controllers */,
 				FA80FC3C2163B5DF00452C5A /* Main.storyboard */,
@@ -162,11 +197,11 @@
 		FABB4D762163E95A00FEBE2A /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				FABB4D742163E24000FEBE2A /* DivisionCell.swift */,
-				FA80FC502163C3A300452C5A /* TeamCell.swift */,
-				FABB4D772163E98C00FEBE2A /* PlayerCell.swift */,
-				FA9D3A302179F91600CFF3CD /* ScheduleGameCell.swift */,
-				FAF82013217F1BB700762091 /* TeamInfoCell.swift */,
+				FA3F5F2421AC4F7200F3A699 /* DivisionCell.swift */,
+				FA3F5F2321AC4F7200F3A699 /* TeamCell.swift */,
+				FA3F5F2121AC4F7200F3A699 /* PlayerCell.swift */,
+				FA3F5F2521AC4F7200F3A699 /* ScheduleGameCell.swift */,
+				FA3F5F2221AC4F7200F3A699 /* TeamInfoCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -199,10 +234,10 @@
 		FAF82016217F26AF00762091 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				FA80FC4C2163BA8C00452C5A /* TeamsController.swift */,
-				FA9D3A2A2177913000CFF3CD /* TeamInfoController.swift */,
-				FABB4D792163E9C100FEBE2A /* PlayersController.swift */,
-				FA9D3A2C2179F22A00CFF3CD /* ScheduleController.swift */,
+				FA3F5F1B21AC4F5700F3A699 /* TeamsController.swift */,
+				FA3F5F1921AC4F5700F3A699 /* TeamInfoController.swift */,
+				FA3F5F1C21AC4F5700F3A699 /* PlayersController.swift */,
+				FA3F5F1A21AC4F5700F3A699 /* ScheduleController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -279,36 +314,45 @@
 			buildActionMask = 2147483647;
 			files = (
 				FABB4D852164ABFF00FEBE2A /* APIManager.swift in Sources */,
-				FABB4D782163E98C00FEBE2A /* PlayerCell.swift in Sources */,
+				FA3F5F1721AC4D4700F3A699 /* PlayersCellViewModel.swift in Sources */,
 				FA9D3A0E2176023700CFF3CD /* SCDAPIResponse.swift in Sources */,
-				FA80FC512163C3A300452C5A /* TeamCell.swift in Sources */,
+				FA3F5F1F21AC4F5700F3A699 /* TeamsController.swift in Sources */,
+				FA3F5F1521AC4D3A00F3A699 /* PlayersViewModel.swift in Sources */,
+				FA3F5F1D21AC4F5700F3A699 /* TeamInfoController.swift in Sources */,
 				FA9D3A142176044F00CFF3CD /* SCDAPIGame.swift in Sources */,
 				FA9D3A102176030F00CFF3CD /* SCDAPIMonthSCD.swift in Sources */,
 				FABB4D812163FB5B00FEBE2A /* APIResultSets.swift in Sources */,
 				FA80FC4F2163BC6B00452C5A /* Team.swift in Sources */,
-				FA9D3A2B2177913000CFF3CD /* TeamInfoController.swift in Sources */,
 				FA9D3A22217667A900CFF3CD /* TeamInfoSegmentedControl.swift in Sources */,
-				FA80FC4D2163BA8C00452C5A /* TeamsController.swift in Sources */,
 				FAF8201A217F550E00762091 /* ColorableNavigationController.swift in Sources */,
 				FA9D3A12217603A000CFF3CD /* SCDAPIMonth.swift in Sources */,
-				FAF82014217F1BB700762091 /* TeamInfoCell.swift in Sources */,
+				FA3F5F0721AC4C8B00F3A699 /* Box.swift in Sources */,
+				FA3F5F0D21AC4D0800F3A699 /* TeamsSectionHeaderViewModel.swift in Sources */,
+				FA3F5F0B21AC4CFD00F3A699 /* TeamsCellViewModel.swift in Sources */,
+				FA3F5F0F21AC4D1400F3A699 /* TeamInfoViewModel.swift in Sources */,
 				FABB4D832163FBF700FEBE2A /* APIParameters.swift in Sources */,
-				FABB4D752163E24000FEBE2A /* DivisionCell.swift in Sources */,
 				FA9D3A1C21761A0000CFF3CD /* Schedule.swift in Sources */,
 				FABB4D872164B2FA00FEBE2A /* APIRowSet.swift in Sources */,
 				FA9D3A2021761BC600CFF3CD /* ScheduleGame.swift in Sources */,
 				FA9D3A1E21761B4E00CFF3CD /* ScheduleMonth.swift in Sources */,
+				FA3F5F1121AC4D2500F3A699 /* ScheduleViewModel.swift in Sources */,
 				FABB4D7C2163EB2800FEBE2A /* Player.swift in Sources */,
 				FA3E173921931263007E517A /* AlwaysPoppableDelegate.swift in Sources */,
+				FA3F5F0921AC4CD800F3A699 /* TeamsViewModel.swift in Sources */,
+				FA3F5F2921AC4F7200F3A699 /* DivisionCell.swift in Sources */,
 				FA80FC392163B5DF00452C5A /* AppDelegate.swift in Sources */,
-				FABB4D7A2163E9C100FEBE2A /* PlayersController.swift in Sources */,
+				FA3F5F2621AC4F7200F3A699 /* PlayerCell.swift in Sources */,
+				FA3F5F1E21AC4F5700F3A699 /* ScheduleController.swift in Sources */,
+				FA3F5F2021AC4F5700F3A699 /* PlayersController.swift in Sources */,
 				FADFBCFA216FA04100A92EB5 /* TeamInfoNavBarTitleView.swift in Sources */,
+				FA3F5F2821AC4F7200F3A699 /* TeamCell.swift in Sources */,
 				FA9D3A0C2175028600CFF3CD /* PickerAlertController.swift in Sources */,
 				FA9D3A16217604F000CFF3CD /* SCDAPITeam.swift in Sources */,
-				FA9D3A312179F91600CFF3CD /* ScheduleGameCell.swift in Sources */,
+				FA3F5F2721AC4F7200F3A699 /* TeamInfoCell.swift in Sources */,
+				FA3F5F2A21AC4F7200F3A699 /* ScheduleGameCell.swift in Sources */,
 				FABB4D7E2163FABD00FEBE2A /* APIResponse.swift in Sources */,
+				FA3F5F1321AC4D2F00F3A699 /* ScheduleGameCellViewModel.swift in Sources */,
 				FAF82010217B632E00762091 /* TeamMenuBarView.swift in Sources */,
-				FA9D3A2D2179F22B00CFF3CD /* ScheduleController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

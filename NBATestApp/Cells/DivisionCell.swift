@@ -9,5 +9,12 @@
 import UIKit
 
 class DivisionCell: UICollectionReusableView {
-    @IBOutlet var divisionNameLabel: UILabel!    
+    @IBOutlet var divisionNameLabel: UILabel!
+    
+    weak var viewModel: TeamsSectionHeaderViewModel? {
+        willSet(viewModel) {
+            guard let viewModel = viewModel else { return }
+            divisionNameLabel.text = viewModel.name
+        }
+    }
 }

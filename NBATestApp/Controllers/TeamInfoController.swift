@@ -10,9 +10,7 @@ import UIKit
 
 class TeamInfoController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, NavigationBarColorable, PickerAlertDelegate {
     
-    var team : Team?
-    var teamSchedule : Schedule?
-    var season = "2018-19"
+    var viewModel: TeamInfoViewModel?
     
     var navBarTitleView : TeamInfoNavBarTitleView?
     
@@ -22,34 +20,37 @@ class TeamInfoController: UIViewController, UICollectionViewDataSource, UICollec
     var teamInfoView: UICollectionView!
     
     var navigationTintColor: UIColor? { return UIColor.white }
-    var navigationBarTintColor: UIColor? { return team?.primaryColor}
+    var navigationBarTintColor: UIColor? { return viewModel?.team?.primaryColor}
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
     
-    private lazy var rosterVC: PlayersController = {
+    private lazy var playersController: PlayersController = {
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         var viewController = storyboard.instantiateViewController(withIdentifier: "PlayersController") as! PlayersController
-        viewController.team = team
+        if let team = viewModel?.team {
+            viewController.viewModel = PlayersViewModel(team: team)
+        }
         self.add(asChildViewController: viewController)
         return viewController
     }()
     
-    private lazy var scheduleVC: ScheduleController = {
+    private lazy var scheduleController: ScheduleController = {
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         var viewController = storyboard.instantiateViewController(withIdentifier: "ScheduleController") as! ScheduleController
-        viewController.team = team
-        viewController.teamSchedule = teamSchedule
-        viewController.parentVC = self
+        if let team = viewModel?.team {
+            viewController.viewModel = ScheduleViewModel(team: team)
+        }
+        viewController.parentController = self
         self.add(asChildViewController: viewController)
         return viewController
     }()
-
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = team?.primaryColor
+        view.backgroundColor = viewModel?.team?.primaryColor
         
         setupNavBar()
         setupTeamMenuBar()
@@ -71,8 +72,8 @@ class TeamInfoController: UIViewController, UICollectionViewDataSource, UICollec
         cell.backgroundColor = UIColor.white
         
         switch indexPath.row {
-        case 0: cell.hostedView = scheduleVC.tableView
-        case 1: cell.hostedView = rosterVC.tableView
+        case 0: cell.hostedView = scheduleController.tableView
+        case 1: cell.hostedView = playersController.tableView
         default: break
         }
         return cell
@@ -94,18 +95,21 @@ class TeamInfoController: UIViewController, UICollectionViewDataSource, UICollec
     
     //    MARK: - PickerAlertDelegate
     func handlePickerValue(_ value: String) {
-        if season != value {
-            season = value
-            scheduleVC.updateTableForSeason(value)
-            rosterVC.updateTableForSeason(value)
-            navBarTitleView?.seasonButton.setTitle(self.season + " ⩔", for: .normal)
+        if viewModel?.season.value != value {
+            viewModel?.season.value = value
+            scheduleController.updateTableForSeason(value)
+            playersController.updateTableForSeason(value)
+            
+            viewModel?.season.bind{ [unowned self] string in
+                self.navBarTitleView?.seasonButton.setTitle(string + " ⩔", for: .normal)
+            }
         }
     }
     
     
     //    MARK: - Methods
     private func setupNavBar() {
-        if let team = team {
+        if let team = viewModel?.team {
             navBarTitleView = TeamInfoNavBarTitleView(teamName: team.fullName, season: "2018-19")
             navigationItem.titleView = navBarTitleView
             navBarTitleView!.seasonButton.addTarget(self, action: #selector(chooseSeason), for: .touchUpInside)
@@ -120,7 +124,7 @@ class TeamInfoController: UIViewController, UICollectionViewDataSource, UICollec
         teamMenuBar.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
         teamMenuBar.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
         
-        if let team = team {
+        if let team = viewModel?.team {
             teamInfoSegmentedControl = TeamInfoSegmentedControl(color: team.secondColor)
             teamMenuBar.backgroundColor = team.primaryColor
         }
@@ -170,7 +174,8 @@ class TeamInfoController: UIViewController, UICollectionViewDataSource, UICollec
     }
     
     @objc private func chooseSeason() {
-        let pickerAlert = PickerAlertController(withTeam: team!, season: season)
+        guard let viewModel = viewModel, let team = viewModel.team else { return }
+        let pickerAlert = PickerAlertController(withTeam: team, season: viewModel.season.value)
         pickerAlert.delegate = self
         present(pickerAlert, animated: true, completion: nil)
     }

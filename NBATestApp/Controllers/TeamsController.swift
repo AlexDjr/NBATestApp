@@ -8,12 +8,12 @@
 
 import UIKit
 
-private let reuseIdentifier = "TeamCell"
+private let cellIdentifier = "TeamCell"
+private let sectionHeaderIdentifier = "DivisionCell"
 
 class TeamsController: UICollectionViewController, NavigationBarColorable {
     
-    var seasonSchedule : Schedule?
-    var nbaLogoView : UIImageView?
+    private var viewModel: TeamsViewModel?
     
     var navigationTintColor: UIColor? { return UIColor.white }
     var navigationBarTintColor: UIColor? { return UIColor.white }
@@ -25,16 +25,10 @@ class TeamsController: UICollectionViewController, NavigationBarColorable {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        nbaLogoView = UIImageView(image: UIImage(named: "nba-logo-header"))
-        nbaLogoView!.contentMode = .scaleAspectFit
-        navigationItem.titleView = nbaLogoView
-        
+        viewModel = TeamsViewModel()
+        viewModel?.getSeasonSchedule()
+        navigationItem.titleView = viewModel?.titleView
         collectionView.alwaysBounceVertical = true
-        
-        APIManager.sharedManager.getSchedule(season: "2018-19") { schedule in
-            self.seasonSchedule = schedule
-            print("Schedule downloaded")
-        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -44,31 +38,36 @@ class TeamsController: UICollectionViewController, NavigationBarColorable {
                 navController.setNavigationBarHidden(false, animated: true)
             }
         }
-
     }
     
     
     // MARK: - UICollectionViewDataSource
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 6
+        return viewModel?.numberOfSections() ?? 1
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return arrTeams[section].count
+        return viewModel?.numberOfItemsInSection(section) ?? 0
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! TeamCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as? TeamCell
         
-        cell.teamLogo.image = UIImage(named: arrTeams[indexPath.section][indexPath.row].name)
-        return cell
+        guard let teamCell = cell, let viewModel = viewModel else { return UICollectionViewCell() }
+        let cellViewModel = viewModel.cellViewModel(forIndexPath: indexPath)
+        teamCell.viewModel = cellViewModel
+        
+        return teamCell
     }
     
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         var header = DivisionCell()
         if kind == UICollectionView.elementKindSectionHeader {
-            header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "DivisionCell", for: indexPath) as! DivisionCell
-            header.divisionNameLabel.text = Division.fromHashValue(hashValue: indexPath.section)?.rawValue.uppercased() ?? " "
+            header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: sectionHeaderIdentifier, for: indexPath) as! DivisionCell
+            guard let viewModel = viewModel else { return UICollectionReusableView() }
+            let headerViewModel = viewModel.sectionHeaderViewModel(forIndexPath: indexPath)
+            
+            header.viewModel = headerViewModel
         }
         return header
     }
@@ -76,32 +75,15 @@ class TeamsController: UICollectionViewController, NavigationBarColorable {
     
     // MARK: - UICollectionViewDelegate
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let teamInfoVC = TeamInfoController()
-        let team = arrTeams[indexPath.section][indexPath.row]
-        teamInfoVC.team = team
-        teamInfoVC.teamSchedule = getTeamSchedule(team)
-        navigationController?.pushViewController(teamInfoVC, animated: true)
+        let teamInfoController = TeamInfoController()
+        
+        guard let viewModel = viewModel else { return }
+        viewModel.selectItem(atIndexPath: indexPath)
+        teamInfoController.viewModel = viewModel.viewModelForSelectedItem()
+        
+        navigationController?.pushViewController(teamInfoController, animated: true)
     }
     
     
-    //    MARK: - Methods
-    private func getTeamSchedule(_ team: Team) -> Schedule? {
-        guard let schedule = seasonSchedule else { return nil }
-        
-        var months = [ScheduleMonth]()
-        let games = [ScheduleGame]()
-        
-        for (index, month) in schedule.months.enumerated() {
-            months.append(ScheduleMonth(name: month.name, games: games))
-            for game in month.games {
-                if game.homeId == team.id || game.visitorId == team.id {
-                    months[index].games.append(game)
-                }
-            }
-        }
-        
-        let monthWithGames = months.filter { !$0.games.isEmpty }
-        return Schedule(months: monthWithGames)
-    }
 }
 

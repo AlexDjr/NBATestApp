@@ -10,13 +10,12 @@ import UIKit
 
 class ScheduleController: UITableViewController {
     
-    var team : Team?
-    var teamSchedule : Schedule?
-    var season = "2018-19"
+    var viewModel: ScheduleViewModel?
+
     let spinner = UIActivityIndicatorView()
     var loadingView = UIView()
     
-    var parentVC : TeamInfoController?
+    var parentController : TeamInfoController?
     var navBarIsHidden = false
     
     override func viewDidLoad() {
@@ -24,100 +23,34 @@ class ScheduleController: UITableViewController {
         tableView.allowsSelection = false
     }
     
+    
     // MARK: - UITableViewDataSource
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return teamSchedule?.months.count ?? 1
+        return viewModel?.numberOfSections() ?? 1
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return teamSchedule?.months[section].games.count ?? 0
+        return viewModel?.numberOfRowsInSection(section) ?? 0
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ScheduleGameCell", for: indexPath) as! ScheduleGameCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ScheduleGameCell", for: indexPath) as? ScheduleGameCell
         
-        guard let schedule = teamSchedule else { return cell }
+        guard let scheduleGameCell = cell, let viewModel = viewModel else { return UITableViewCell() }
+        let cellViewModel = viewModel.cellViewModel(forIndexPath: indexPath)
+        scheduleGameCell.viewModel = cellViewModel
         
-        let game = schedule.months[indexPath.section].games[indexPath.row]
-        
-        var visitorTeamName = ""
-        var homeTeamName = ""
-        var isHomeGame = false
-        var isGamePlayed = false
-        
-        if game.homeId == team!.id {
-            isHomeGame = true
-        }
-        
-        if !game.homeScore.isEmpty {
-            isGamePlayed = true
-        }
-        
-        if isHomeGame {
-            homeTeamName = team!.name
-            visitorTeamName = Team.getTeamNameById(game.visitorId) ?? "no-logo"
-        } else {
-            homeTeamName = Team.getTeamNameById(game.homeId) ?? "no-logo"
-            visitorTeamName = team!.name
-        }
-        
-        if isGamePlayed {
-            cell.gameResult.isHidden = false
-            if Int(game.homeScore)! > Int(game.visitorScore)! {
-                cell.gameResult.text = isHomeGame ? "Win" : "Loss"
-                cell.gameResult.textColor = isHomeGame ? UIColor.init(red: 0/255, green: 144/255, blue: 81/255, alpha: 1) : UIColor.init(red: 255/255, green: 15/255, blue: 0/255, alpha: 1)
-            } else {
-                cell.gameResult.text = isHomeGame ? "Loss" : "Win"
-                cell.gameResult.textColor = isHomeGame ? UIColor.init(red: 255/255, green: 15/255, blue: 0/255, alpha: 1) : UIColor.init(red: 0/255, green: 144/255, blue: 81/255, alpha: 1)
-            }
-        } else {
-            cell.gameResult.isHidden = true
-        }
-        
-        cell.visitorScore.text = game.visitorScore.count == 0 ? "-" : game.visitorScore
-        cell.homeScore.text = game.homeScore.count == 0 ? "-" : game.homeScore
-        cell.visitorLogo.image = UIImage(named: visitorTeamName)
-        cell.homeLogo.image = UIImage(named: homeTeamName)
-        cell.visitorRecord.text = game.visitorRecord
-        cell.homeRecord.text = game.homeRecord
-        cell.gameDate.text = game.date
-        
-        if let index = game.timeEST.index(of: "T") {
-            let indexAfter = game.timeEST.index(after: index)
-            let endIndex = game.timeEST.index(index, offsetBy: 5)
-            let time = game.timeEST[indexAfter...endIndex]
-            cell.gameTime.text = "  " + time
-        }
-        
-        switch game.type {
-        case .preseason:
-            cell.gameType.isHidden = false
-            cell.gameType.text = "Preseason"
-            cell.gameType.textColor = .darkText
-            cell.gameTypeView.backgroundColor = UIColor.init(red: 247/255, green: 247/255, blue: 247/255, alpha: 1)
-        case .regular:
-            cell.gameType.isHidden = true
-            cell.gameTypeView.backgroundColor = .clear
-        case .playoffs:
-            cell.gameType.isHidden = false
-            cell.gameType.text = "Playoffs"
-            cell.gameType.textColor = .white
-            cell.gameTypeView.backgroundColor = team?.primaryColor
-        default:
-            cell.gameType.isHidden = true
-            cell.gameTypeView.backgroundColor = .clear
-        }
-        return cell
+        return scheduleGameCell
     }
     
     
     //    MARK: - UITableViewDelegate
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 90
+        return viewModel?.heightForRowAt(forIndexPath: indexPath) ?? 44
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return teamSchedule?.months[section].name ?? ""
+        return viewModel?.titleForHeaderInSection(section) ?? ""
     }
     
     
@@ -127,12 +60,12 @@ class ScheduleController: UITableViewController {
         if navBarIsHidden == true && targetContentOffset.pointee.y < scrollView.contentOffset.y && velocity.y <= -1.3 {
             navigationController?.setNavigationBarHidden(false, animated: true)
             navBarIsHidden = false
-            //  calling this to re-lay content (particylary items height) in collection view
-            parentVC?.teamInfoView.collectionViewLayout.invalidateLayout()
+            //  calling this to re-lay content (particulary items height) in collection view
+            parentController?.teamInfoView.collectionViewLayout.invalidateLayout()
         } else if navBarIsHidden == false && targetContentOffset.pointee.y > scrollView.contentOffset.y && velocity.y >= 1.3 {
             navigationController?.setNavigationBarHidden(true, animated: true)
             navBarIsHidden = true
-            parentVC?.teamInfoView.collectionViewLayout.invalidateLayout()
+            parentController?.teamInfoView.collectionViewLayout.invalidateLayout()
         }
     }
     
@@ -140,48 +73,40 @@ class ScheduleController: UITableViewController {
         if navBarIsHidden == true && scrollView.contentOffset.y <= 0 {
             navigationController?.setNavigationBarHidden(false, animated: true)
             navBarIsHidden = false
-            parentVC?.teamInfoView.collectionViewLayout.invalidateLayout()
-        }
-    }
-    
-    
-    //    MARK: - API GET Methods
-    private func getSchedule() {
-        APIManager.sharedManager.getTeamSchedule(team!, season: season) { schedule in
-            if let teamSchedule = schedule {
-                DispatchQueue.main.async {
-                    self.teamSchedule = teamSchedule
-                    self.tableView.reloadData()
-                    self.removeLoadingScreen()
-                }
-            } else {
-                DispatchQueue.main.async {
-                    self.teamSchedule = nil
-                    
-                    let alert = UIAlertController(title: nil, message: "No schedule available for this season", preferredStyle: .alert)
-                    let cancelAction = UIAlertAction(title: "OK", style: .default, handler: { alert in
-                        self.tableView.reloadData()
-                        self.removeLoadingScreen()
-                    })
-                    
-                    alert.addAction(cancelAction)
-                    self.present(alert, animated: true, completion: nil)
-                }
-            }
+            parentController?.teamInfoView.collectionViewLayout.invalidateLayout()
         }
     }
     
     
     //    MARK: - UI Methods
     func updateTableForSeason(_ value: String) {
-        if season != value {
-            season = value
+        if viewModel?.season.value != value {
+            self.viewModel?.season.value = value
             
             if loadingView.isHidden == false {
                 removeLoadingScreen()
             }
             setLoadingScreen()
-            getSchedule()
+            guard let viewModel = viewModel else { return }
+            viewModel.getSchedule { [weak self] schedule in
+                if schedule != nil {
+                    DispatchQueue.main.async {
+                        self?.tableView.reloadData()
+                        self?.removeLoadingScreen()
+                    }
+                } else {
+                    DispatchQueue.main.async {
+                        let alert = UIAlertController(title: nil, message: "No schedule available for this season", preferredStyle: .alert)
+                        let cancelAction = UIAlertAction(title: "OK", style: .default, handler: { alert in
+                            self?.tableView.reloadData()
+                            self?.removeLoadingScreen()
+                        })
+                        
+                        alert.addAction(cancelAction)
+                        self?.present(alert, animated: true, completion: nil)
+                    }
+                }
+            }
         }
     }
     
@@ -219,5 +144,4 @@ class ScheduleController: UITableViewController {
         tableView.isScrollEnabled = true
     }
     
-
 }

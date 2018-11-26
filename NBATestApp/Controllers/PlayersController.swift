@@ -10,9 +10,7 @@ import UIKit
 
 class PlayersController: UITableViewController {
     
-    var team : Team?
-    var players : [Player]?
-    var season = "2018-19"
+    var viewModel: PlayersViewModel?
     
     let spinner = UIActivityIndicatorView()
     var loadingView = UIView()
@@ -22,85 +20,64 @@ class PlayersController: UITableViewController {
         
         tableView.allowsSelection = false
         self.tableView.separatorStyle = .none
-  
+        
         setLoadingScreen()
-        getPlayers()
+        
+        guard let viewModel = viewModel else { return }
+        viewModel.getPlayers { [weak self] in
+            DispatchQueue.main.async {
+                self?.tableView.reloadData()
+                self?.removeLoadingScreen()
+            }
+        }
     }
     
     
     // MARK: - UITableViewDataSource
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return players?.count ?? 1
+        return viewModel?.numberOfRowsInSection(section) ?? 1
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "PlayerCell", for: indexPath) as! PlayerCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "PlayerCell", for: indexPath) as? PlayerCell
         
-        cell.playerName.text = players?[indexPath.row].fullName
-        cell.playerNumber.text = players?[indexPath.row].number
-        cell.playerPosition.text = players?[indexPath.row].position
-        cell.playerAge.text = String(players?[indexPath.row].age ?? 0)
-        cell.playerHeight.text = players?[indexPath.row].height
-        cell.playerWeight.text = players?[indexPath.row].weight
-        cell.playerExpirience.text = players?[indexPath.row].expirience
-        cell.playerPhoto.image = players?[indexPath.row].photo
+        guard let playerCell = cell, let viewModel = viewModel else { return UITableViewCell() }
+        let cellViewModel = viewModel.cellViewModel(forIndexPath: indexPath)
+        playerCell.viewModel = cellViewModel
         
-        return cell
+        return playerCell
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 90
-    }
-    
-    
-    //    MARK: - API GET Methods
-    private func getPlayers() {
-        APIManager.sharedManager.getPlayersOfTeam(id: team!.id, season: season) { (players : [Player]) in
-                self.players = players
-                self.getPlayersPhoto()
-        }
-    }
-    
-    private func getPlayersPhoto() {
-        if players == nil {
-            print("Error: array of players is nil" )
-        } else {
-            APIManager.sharedManager.getPlayersPhoto(players!) { (images : [UIImage]) in
-                DispatchQueue.main.async {
-                
-                    for index in self.players!.indices {
-                        self.players![index].photo = images[index]
-                    }
-                    
-                    self.tableView.reloadData()
-                    self.removeLoadingScreen()
-                }
-            }
-        }
-        
+        return viewModel?.heightForRowAt(forIndexPath: indexPath) ?? 44
     }
     
     
     //    MARK: - UI Methods
     func updateTableForSeason(_ value: String) {
-        if season != value {
-            season = value
+        if viewModel?.season.value != value {
+            //            season = value
+            self.viewModel?.season.value = value
             
             if loadingView.isHidden == false {
                 removeLoadingScreen()
             }
+            
             setLoadingScreen()
-            getPlayers()
+            
+            guard let viewModel = viewModel else { return }
+            viewModel.getPlayers { [weak self] in
+                DispatchQueue.main.async {
+                    self?.tableView.reloadData()
+                    self?.removeLoadingScreen()
+                }
+            }
         }
     }
     
     private func setLoadingScreen() {
         let x : CGFloat = 0
-        let y : CGFloat = 0 
+        let y : CGFloat = 0
         let width : CGFloat = tableView.frame.width
         let height : CGFloat = tableView.frame.height
         let newLoadingView = UIView()

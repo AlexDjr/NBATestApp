@@ -10,4 +10,11 @@ import UIKit
 
 class TeamCell: UICollectionViewCell {    
     @IBOutlet var teamLogo: UIImageView!
+    
+    weak var viewModel: TeamsCellViewModel? {
+        willSet(viewModel) {
+            guard let viewModel = viewModel else { return }
+            teamLogo.image = viewModel.teamLogo
+        }
+    }
 }

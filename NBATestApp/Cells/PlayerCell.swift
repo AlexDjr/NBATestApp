@@ -19,4 +19,17 @@ class PlayerCell: UITableViewCell {
     @IBOutlet var playerWeight: UILabel!
     @IBOutlet var playerExpirience: UILabel!
 
+    weak var viewModel: PlayersCellViewModel? {
+        willSet(viewModel) {
+            guard let viewModel = viewModel else { return }
+            playerPhoto.image = viewModel.playerPhoto
+            playerName.text = viewModel.playerName
+            playerNumber.text = viewModel.playerNumber
+            playerPosition.text = viewModel.playerPosition
+            playerAge.text = String(viewModel.playerAge)
+            playerHeight.text = viewModel.playerHeight
+            playerWeight.text = viewModel.playerWeight
+            playerExpirience.text = viewModel.playerExpirience
+        }
+    }
 }

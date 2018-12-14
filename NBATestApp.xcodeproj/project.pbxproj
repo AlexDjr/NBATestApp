@@ -63,15 +63,15 @@
 		FA3F5F1221AC4D2F00F3A699 /* ScheduleGameCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleGameCellViewModel.swift; sourceTree = "<group>"; };
 		FA3F5F1421AC4D3A00F3A699 /* PlayersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersViewModel.swift; sourceTree = "<group>"; };
 		FA3F5F1621AC4D4700F3A699 /* PlayersCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersCellViewModel.swift; sourceTree = "<group>"; };
-		FA3F5F1921AC4F5700F3A699 /* TeamInfoController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TeamInfoController.swift; path = NBATestApp/View/Controllers/TeamInfoController.swift; sourceTree = SOURCE_ROOT; };
-		FA3F5F1A21AC4F5700F3A699 /* ScheduleController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ScheduleController.swift; path = NBATestApp/View/Controllers/ScheduleController.swift; sourceTree = SOURCE_ROOT; };
-		FA3F5F1B21AC4F5700F3A699 /* TeamsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TeamsController.swift; path = NBATestApp/View/Controllers/TeamsController.swift; sourceTree = SOURCE_ROOT; };
-		FA3F5F1C21AC4F5700F3A699 /* PlayersController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlayersController.swift; path = NBATestApp/View/Controllers/PlayersController.swift; sourceTree = SOURCE_ROOT; };
-		FA3F5F2121AC4F7200F3A699 /* PlayerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlayerCell.swift; path = NBATestApp/View/Cells/PlayerCell.swift; sourceTree = SOURCE_ROOT; };
-		FA3F5F2221AC4F7200F3A699 /* TeamInfoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TeamInfoCell.swift; path = NBATestApp/View/Cells/TeamInfoCell.swift; sourceTree = SOURCE_ROOT; };
-		FA3F5F2321AC4F7200F3A699 /* TeamCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TeamCell.swift; path = NBATestApp/View/Cells/TeamCell.swift; sourceTree = SOURCE_ROOT; };
-		FA3F5F2421AC4F7200F3A699 /* DivisionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DivisionCell.swift; path = NBATestApp/View/Cells/DivisionCell.swift; sourceTree = SOURCE_ROOT; };
-		FA3F5F2521AC4F7200F3A699 /* ScheduleGameCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ScheduleGameCell.swift; path = NBATestApp/View/Cells/ScheduleGameCell.swift; sourceTree = SOURCE_ROOT; };
+		FA3F5F1921AC4F5700F3A699 /* TeamInfoController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TeamInfoController.swift; path = NBATestApp/Source/View/Controllers/TeamInfoController.swift; sourceTree = SOURCE_ROOT; };
+		FA3F5F1A21AC4F5700F3A699 /* ScheduleController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ScheduleController.swift; path = NBATestApp/Source/View/Controllers/ScheduleController.swift; sourceTree = SOURCE_ROOT; };
+		FA3F5F1B21AC4F5700F3A699 /* TeamsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TeamsController.swift; path = NBATestApp/Source/View/Controllers/TeamsController.swift; sourceTree = SOURCE_ROOT; };
+		FA3F5F1C21AC4F5700F3A699 /* PlayersController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlayersController.swift; path = NBATestApp/Source/View/Controllers/PlayersController.swift; sourceTree = SOURCE_ROOT; };
+		FA3F5F2121AC4F7200F3A699 /* PlayerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlayerCell.swift; path = NBATestApp/Source/View/Cells/PlayerCell.swift; sourceTree = SOURCE_ROOT; };
+		FA3F5F2221AC4F7200F3A699 /* TeamInfoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TeamInfoCell.swift; path = NBATestApp/Source/View/Cells/TeamInfoCell.swift; sourceTree = SOURCE_ROOT; };
+		FA3F5F2321AC4F7200F3A699 /* TeamCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TeamCell.swift; path = NBATestApp/Source/View/Cells/TeamCell.swift; sourceTree = SOURCE_ROOT; };
+		FA3F5F2421AC4F7200F3A699 /* DivisionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DivisionCell.swift; path = NBATestApp/Source/View/Cells/DivisionCell.swift; sourceTree = SOURCE_ROOT; };
+		FA3F5F2521AC4F7200F3A699 /* ScheduleGameCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ScheduleGameCell.swift; path = NBATestApp/Source/View/Cells/ScheduleGameCell.swift; sourceTree = SOURCE_ROOT; };
 		FA80FC352163B5DF00452C5A /* NBATestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NBATestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA80FC382163B5DF00452C5A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA80FC3D2163B5DF00452C5A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -111,13 +111,65 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		FA3E173521930DAE007E517A /* Custom classes */ = {
+		FA3093B621C3DA7600A3B417 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				FABB4D842164ABFF00FEBE2A /* APIManager.swift */,
+				FA3093B721C3DA9700A3B417 /* Model */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		FA3093B721C3DA9700A3B417 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FA9D3A1A21760A1700CFF3CD /* NBA Stats API */,
+				FA9D3A19217609FE00CFF3CD /* NBA Schedule API */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FA3093B821C3DAD800A3B417 /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				FA3E173521930DAE007E517A /* Classes */,
+				FAF82015217F268D00762091 /* UI elements */,
+			);
+			path = Custom;
+			sourceTree = "<group>";
+		};
+		FA3093B921C3DD1500A3B417 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				FA80FC3C2163B5DF00452C5A /* Main.storyboard */,
+				FA80FC412163B5E100452C5A /* LaunchScreen.storyboard */,
+				FA80FC442163B5E100452C5A /* Info.plist */,
+				FAF82017217F3D0B00762091 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		FA3093BA21C3DD3C00A3B417 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				FA80FC382163B5DF00452C5A /* AppDelegate.swift */,
+				FA3F5F0621AC4C8B00F3A699 /* Box.swift */,
+				FA3093B821C3DAD800A3B417 /* Custom */,
+				FA3093B621C3DA7600A3B417 /* Network */,
+				FABB4D7F2163FB0600FEBE2A /* Model */,
+				FA3F5F1821AC4D4F00F3A699 /* ViewModel */,
+				FA3F5F3121AC586200F3A699 /* View */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		FA3E173521930DAE007E517A /* Classes */ = {
 			isa = PBXGroup;
 			children = (
 				FAF82019217F550E00762091 /* ColorableNavigationController.swift */,
 				FA3E173821931263007E517A /* AlwaysPoppableDelegate.swift */,
 			);
-			path = "Custom classes";
+			path = Classes;
 			sourceTree = "<group>";
 		};
 		FA3F5F1821AC4D4F00F3A699 /* ViewModel */ = {
@@ -163,18 +215,8 @@
 		FA80FC372163B5DF00452C5A /* NBATestApp */ = {
 			isa = PBXGroup;
 			children = (
-				FA80FC382163B5DF00452C5A /* AppDelegate.swift */,
-				FABB4D842164ABFF00FEBE2A /* APIManager.swift */,
-				FA3F5F0621AC4C8B00F3A699 /* Box.swift */,
-				FA3E173521930DAE007E517A /* Custom classes */,
-				FAF82015217F268D00762091 /* Custom UI elements */,
-				FABB4D7F2163FB0600FEBE2A /* Model */,
-				FA3F5F1821AC4D4F00F3A699 /* ViewModel */,
-				FA3F5F3121AC586200F3A699 /* View */,
-				FA80FC3C2163B5DF00452C5A /* Main.storyboard */,
-				FA80FC412163B5E100452C5A /* LaunchScreen.storyboard */,
-				FA80FC442163B5E100452C5A /* Info.plist */,
-				FAF82017217F3D0B00762091 /* Assets.xcassets */,
+				FA3093BA21C3DD3C00A3B417 /* Source */,
+				FA3093B921C3DD1500A3B417 /* Resources */,
 			);
 			path = NBATestApp;
 			sourceTree = "<group>";
@@ -222,13 +264,11 @@
 				FA9D3A1B21761A0000CFF3CD /* Schedule.swift */,
 				FA9D3A1D21761B4E00CFF3CD /* ScheduleMonth.swift */,
 				FA9D3A1F21761BC600CFF3CD /* ScheduleGame.swift */,
-				FA9D3A1A21760A1700CFF3CD /* NBA Stats API */,
-				FA9D3A19217609FE00CFF3CD /* NBA Schedule API */,
 			);
 			path = Model;
 			sourceTree = "<group>";
 		};
-		FAF82015217F268D00762091 /* Custom UI elements */ = {
+		FAF82015217F268D00762091 /* UI elements */ = {
 			isa = PBXGroup;
 			children = (
 				FADFBCF9216FA04100A92EB5 /* TeamInfoNavBarTitleView.swift */,
@@ -236,7 +276,7 @@
 				FA9D3A0B2175028600CFF3CD /* PickerAlertController.swift */,
 				FAF8200F217B632E00762091 /* TeamMenuBarView.swift */,
 			);
-			path = "Custom UI elements";
+			path = "UI elements";
 			sourceTree = "<group>";
 		};
 		FAF82016217F26AF00762091 /* Controllers */ = {
@@ -508,7 +548,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CU9VA4YC8Q;
-				INFOPLIST_FILE = "$(SRCROOT)/NBATestApp/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/NBATestApp/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -526,7 +566,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CU9VA4YC8Q;
-				INFOPLIST_FILE = "$(SRCROOT)/NBATestApp/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/NBATestApp/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
